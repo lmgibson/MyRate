@@ -1,1 +1,5 @@
+# Ignore the environment
 conda-env
+
+# Ignore my own resource links and notes
+notes_ignore
