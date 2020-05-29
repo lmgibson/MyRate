@@ -3,3 +3,6 @@ conda-env
 
 # Ignore my own resource links and notes
 notes_ignore
+
+# Ignore notebook checkpoints
+**/*.ipynb_checkpoints/
