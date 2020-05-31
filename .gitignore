@@ -6,3 +6,6 @@ notes_ignore
 
 # Ignore notebook checkpoints
 **/*.ipynb_checkpoints/
+
+# Ignore geckodriver logs
+geckodriver.log
