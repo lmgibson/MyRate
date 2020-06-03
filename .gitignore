@@ -9,3 +9,6 @@ notes_ignore
 
 # Ignore geckodriver logs
 geckodriver.log
+
+# Ignoring the weird pycharm .idea file
+.idea
