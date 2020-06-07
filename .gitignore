@@ -12,3 +12,6 @@ geckodriver.log
 
 # Ignoring the weird pycharm .idea file
 .idea
+
+# Ignoring log files
+.log
