@@ -1,5 +1,7 @@
 # MyRate -  A tool to help freelancers determine their hourly rate
 
+![Product Photo](../notes_ignore/product_photo.png)
+
 ## Welcome
 
 MyRate is a tool to help new freelancers determine how to set their hourly rate. Sites such as Upwork
