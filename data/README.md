@@ -1,8 +1,4 @@
-# What is in each data folder?
+# What is in this folder?
 
-1. Cleaned
-    - Contains the final dataset
-2. Processed
-    - Contains data that has been scraped and is ready to be cleaned
-3. Raw
-    - The raw html from the websites (so I don't have to run the scraper again)
+1. Raw
+    - Supplemental data containing city-level features (simplemaps . . .) and a state-region cross-walk (census_regions . . .)
