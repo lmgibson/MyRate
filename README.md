@@ -1,6 +1,6 @@
 # MyRate -  A tool to help freelancers determine their hourly rate
 
-![Product Photo](../notes_ignore/product_photo.png)
+![alt text](https://github.com/lmgibson/myrate/tree/master/readme/product_photo.jpg?raw=true)
 
 ## Welcome
 
