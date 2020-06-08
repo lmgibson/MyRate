@@ -64,8 +64,14 @@ def num_stopwords(bio):
 
 
 def get_model():
-    filename = '/Users/Metaverse/Desktop/Insight/projects/myrate/scripts/finalized_model.sav'
-    loaded_model = pickle.load(open(filename, 'rb'))
+
+    # Tries the location for the hosted server first. Then tries local.
+    try:
+        filename = '~/MyRate/scripts/finalized_model.sav'
+        loaded_model = pickle.load(open(filename, 'rb'))
+    except:
+        filename = '~/Desktop/Insight/projects/myrate/scripts/finalized_model.sav'
+        loaded_model = pickle.load(open(filename, 'rb'))
 
     return loaded_model
 
