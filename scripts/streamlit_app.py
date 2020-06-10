@@ -88,7 +88,8 @@ def estimate_hourly_rate():
 
     # Updating
     cols[state] = 1
-    cols[skill_categories.lower()] = 1
+    for i, val in enumerate(skill_categories):
+        cols[val.lower()] = 1
 
     example = np.array(list(cols.values()))
     pred = model.predict(example.reshape(1, -1))
@@ -116,7 +117,7 @@ state = st.selectbox(
 )
 
 # Category Select Box
-skill_categories = st.selectbox(
+skill_categories = st.multiselect(
     label='What types of services are you offering?',
     options=["Select one", 'Administrative & Secretarial',
              'Business & Finance', 'Design & Art',
