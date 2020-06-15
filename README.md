@@ -12,7 +12,7 @@ hourly rate (compared to hourly rates in the market) and saves the freelancer ti
 
 ## How to Use
 
-You can use this tool by going to fillerfiller, entering your information, and immediately have your
+You can use this tool by going to the [MyRate web app](http://54.153.93.21:8501/), entering your information, and immediately have your
 hourly rate estimate.
 
 In the future we hope to expand the tool to make suggestions for how you can improve your profile, compared
