@@ -113,8 +113,12 @@ def averaged_word_vectorizer(corpus, model, num_features):
 
 def get_word_embedding():
     # Loading Model
-    filename = '/home/ubuntu/MyRate/scripts/model_w2v.sav'
-    model_w2v = pickle.load(open(filename, 'rb'))
+    try:
+        filename = '/home/ubuntu/MyRate/scripts/model_w2v.sav'
+        model_w2v = pickle.load(open(filename, 'rb'))
+    except:
+        filename = os.environ['PWD'] + '/scripts/model_w2v.sav'
+        model_w2v = pickle.load(open(filename, 'rb'))
 
     tokenized_corpus = word_tokenize(bio)
     embeddings = averaged_word_vectorizer(corpus=tokenized_corpus, model=model_w2v,
@@ -138,8 +142,9 @@ def create_input_array():
 
     # Updating Location Feature
     cols[state] = 1
-    for i, val in enumerate(skill_categories):
-        cols[val.lower()] = 1
+
+    # Updating skill category
+    cols[skill_categories.lower()] = 1
 
     return pd.DataFrame(cols, index=[0])
 
@@ -171,10 +176,9 @@ state = st.selectbox(
 )
 
 # Category Select Box
-skill_categories = st.multiselect(
+skill_categories = st.selectbox(
     label='What types of services are you offering?',
-    options=["Select one", 'Administrative & Secretarial',
-             'Business & Finance', 'Design & Art',
+    options=['Administrative & Secretarial', 'Business & Finance', 'Design & Art',
              'Education & Training', 'Engineering & Architecture', 'Legal',
              'Programming & Development', 'Sales & Marketing', 'Writing & Translation']
 )
@@ -202,10 +206,7 @@ st.text("")
 st.text("")
 
 # Creating input matrix
-try:
-    cols = model_input_cols()
-except:
-    st.write("I broke trying to create input dataframe")
+cols = model_input_cols()
 
 # Importing Model
 model = get_model()
@@ -213,24 +214,24 @@ model = get_model()
 # Creating Dataset to Predict On
 cols = create_input_array()
 
-# try:
-#     model = get_model()
-# except:
-#     st.write("There doesn't seem to be a model to use . . .")
+st.write(cols)
 
 # Web-app to predict hourly rate
-
-
 if st.button("Estimate Hourly Rate"):
 
-    try:
-        your_rate = estimate_hourly_rate()
-        st.write("We recommend an hourly rate of", round(your_rate[0]), "$")
-    except:
-        st.write("Something Broke")
+    if (state == "Select a State") | (bio == "Enter your bio here.") | (len(skill_categories) == 0):
+
+        st.write('Please fill all of the information above!')
+
+    else:
+
+        try:
+            your_rate = estimate_hourly_rate()
+            st.write("We recommend an hourly rate of",
+                     round(your_rate[0]), "$")
+
+        except:
+            st.write("Something Broke")
 
 else:
     st.write("Put your inputs in above!")
-
-
-# Come up with 3-5 sentences and send it around
