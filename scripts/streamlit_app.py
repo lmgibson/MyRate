@@ -1,4 +1,5 @@
 # Reference: https://docs.streamlit.io/en/latest/getting_started.html
+# Reference for hosting: https://towardsdatascience.com/how-to-deploy-a-streamlit-app-using-an-amazon-free-ec2-instance-416a41f69dc3
 # Importing Libraries
 import streamlit as st  # creating web-app
 import pandas as pd  # managing data
@@ -10,6 +11,7 @@ from nltk.corpus import stopwords  # Cleaning text data
 import os
 import xgboost as xgb
 
+################################################
 # Function to create input matrix
 
 
@@ -146,6 +148,8 @@ def estimate_hourly_rate():
 
     return pred
 
+################################################
+
 
 # Setting up the Interactive Web-App
 # Welcome Splash
@@ -224,3 +228,6 @@ if st.button("Estimate Hourly Rate"):
 
 else:
     st.write("Put your inputs in above!")
+
+# Links to Guru.com
+st.markdown('[Create a freelance account!](https://www.guru.com/)')
