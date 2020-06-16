@@ -68,14 +68,9 @@ def num_stopwords(bio):
 
 def get_model():
     # Tries the location for the hosted server first. Then tries local.
-    model_xgboost = xgb.Booster({'nthread': 4})  # init model
 
-    try:
-        filename = '/home/ubuntu/MyRate/scripts/model_xgb.sav'
-        model_xgboost = pickle.load(open(filename, 'rb'))
-    except:
-        filename = '/Users/Metaverse/Desktop/Insight/projects/myrate/scripts/model_xgb.sav'
-        model_xgboost = pickle.load(open(filename, 'rb'))
+    filename = os.environ['PWD'] '/scripts/models/model_xgb.sav'
+    model_xgboost = pickle.load(open(filename, 'rb'))
 
     return model_xgboost
 
@@ -113,12 +108,8 @@ def averaged_word_vectorizer(corpus, model, num_features):
 
 def get_word_embedding():
     # Loading Model
-    try:
-        filename = '/home/ubuntu/MyRate/scripts/model_w2v.sav'
-        model_w2v = pickle.load(open(filename, 'rb'))
-    except:
-        filename = os.environ['PWD'] + '/scripts/model_w2v.sav'
-        model_w2v = pickle.load(open(filename, 'rb'))
+    filename = os.environ['PWD'] '/scripts/models/model_w2v.sav'
+    model_w2v = pickle.load(open(filename, 'rb'))
 
     tokenized_corpus = word_tokenize(bio)
     embeddings = averaged_word_vectorizer(corpus=tokenized_corpus, model=model_w2v,
