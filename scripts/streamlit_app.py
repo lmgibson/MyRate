@@ -69,7 +69,7 @@ def num_stopwords(bio):
 def get_model():
     # Tries the location for the hosted server first. Then tries local.
 
-    filename = os.environ['PWD'] '/scripts/models/model_xgb.sav'
+    filename = os.environ['PWD'] + '/scripts/models/model_xgb.sav'
     model_xgboost = pickle.load(open(filename, 'rb'))
 
     return model_xgboost
@@ -108,7 +108,7 @@ def averaged_word_vectorizer(corpus, model, num_features):
 
 def get_word_embedding():
     # Loading Model
-    filename = os.environ['PWD'] '/scripts/models/model_w2v.sav'
+    filename = os.environ['PWD'] + '/scripts/models/model_w2v.sav'
     model_w2v = pickle.load(open(filename, 'rb'))
 
     tokenized_corpus = word_tokenize(bio)
@@ -204,8 +204,6 @@ model = get_model()
 
 # Creating Dataset to Predict On
 cols = create_input_array()
-
-st.write(cols)
 
 # Web-app to predict hourly rate
 if st.button("Estimate Hourly Rate"):
