@@ -136,7 +136,7 @@ def create_input_array():
     cols[skill_categories.lower()] = 1
 
     # Setting mean for hours worked per month
-    cols['hours_worked_pr_mnth_pst_yr'] = 50
+    cols['hours_worked_pr_mnth_pst_yr'] = 5
 
     return pd.DataFrame(cols, index=[0])
 
