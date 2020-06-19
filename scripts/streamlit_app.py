@@ -16,7 +16,7 @@ import xgboost as xgb
 
 
 def model_input_cols():
-    cols = ['num_skills', 'bio_length', 'bio_word_count', 'avg_word_length', 'num_stop',
+    cols = ['num_skills', 'bio_length', 'bio_word_count', 'avg_word_length', 'num_stop', 'hours_worked_pr_mnth_pst_yr',
             'administrative & secretarial', 'business & finance', 'design & art', 'education & training',
             'engineering & architecture', 'legal', 'programming & development', 'sales & marketing',
             'writing & translation', 'Alabama', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -100,25 +100,21 @@ def average_word_vectors(words, model, vocabulary, num_features):
     return feature_vector
 
 
-def averaged_word_vectorizer(corpus, model, num_features):
-    vocabulary = set(model.wv.index2word)
-    features = [average_word_vectors(tokenized_sentence, model, vocabulary, num_features)
-                for tokenized_sentence in corpus]
-
-    return np.mean(pd.DataFrame(np.array(features)), axis=0)
-
-
 def get_word_embedding():
     # Loading Model
     filename = os.environ['PWD'] + '/scripts/models/model_w2v.sav'
     model_w2v = pickle.load(open(filename, 'rb'))
 
-    tokenized_corpus = word_tokenize(bio)
-    embeddings = averaged_word_vectorizer(corpus=tokenized_corpus, model=model_w2v,
-                                          num_features=50)
+    words = model_w2v.wv.index2word
+    wvs = model_w2v.wv[words]
 
-    embeddings.index = [str(x) for x in list(embeddings.index)]
-    embeddings = pd.DataFrame(embeddings).iloc[:, 0].to_dict()
+    tokenize_bio = word_tokenize(bio)
+
+    vocabulary = set(model_w2v.wv.index2word)
+    features = average_word_vectors(
+        tokenize_bio, model_w2v, vocabulary, 50)
+
+    embeddings = pd.DataFrame(np.array(features)).T
 
     return embeddings
 
@@ -138,6 +134,9 @@ def create_input_array():
 
     # Updating skill category
     cols[skill_categories.lower()] = 1
+
+    # Setting mean for hours worked per month
+    cols['hours_worked_pr_mnth_pst_yr'] = 1.2
 
     return pd.DataFrame(cols, index=[0])
 
@@ -208,6 +207,7 @@ model = get_model()
 
 # Creating Dataset to Predict On
 cols = create_input_array()
+st.write(cols)
 
 # Web-app to predict hourly rate
 if st.button("Estimate Hourly Rate"):
