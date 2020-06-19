@@ -136,7 +136,7 @@ def create_input_array():
     cols[skill_categories.lower()] = 1
 
     # Setting mean for hours worked per month
-    cols['hours_worked_pr_mnth_pst_yr'] = 1.2
+    cols['hours_worked_pr_mnth_pst_yr'] = 50
 
     return pd.DataFrame(cols, index=[0])
 
@@ -146,6 +146,42 @@ def estimate_hourly_rate():
     pred = model.predict(xgb.DMatrix(cols.values))
 
     return pred
+
+
+# Code to pull up additional information and provide a range and link
+# Creating Lookup Function
+
+def load_data():
+    dt = pd.read_csv((os.environ['PWD'] + '/data/cleaned/users.csv'))
+    return dt
+
+def get_my_rate():
+
+    # Load Data
+
+    # Top performing user in their Category
+    top_workers = dt[dt[skill_categories.lower()] ==
+                     1]['hours_worked_pr_mnth_pst_yr'].nlargest(3).min()
+    top_workers = dt[(dt[skill_categories.lower()] == 1) & (
+        dt['hours_worked_pr_mnth_pst_yr'] >= top_workers)].profile_url.tolist()
+
+    # Getting Rate Distribution
+    rate_dist = dt[(dt[skill_categories.lower()] == 1)].hourly_rate.describe()
+
+    med_rate = rate_dist[5]
+    min_rate = rate_dist[4]
+    max_rate = rate_dist[6]
+    num_users = rate_dist[0]
+
+    # Printing Results
+    st.write("We recommend an hourly rate of:", "$" + str(int(your_rate[0])), "  \n  \n"
+             "Of " + str(int(num_users)) + " users similar to you",
+             "the majority of active users had hourly rates between",
+             "$" + str(int(min_rate)), "and", "$" + str(int(max_rate)) + ".  \n" +
+             "Here are profiles of top-performing users who are similar to you:",
+             "  \n  \n1.", top_workers[0],
+             "  \n2.", top_workers[1],
+             "  \n3.", top_workers[2])
 
 ################################################
 
@@ -207,7 +243,10 @@ model = get_model()
 
 # Creating Dataset to Predict On
 cols = create_input_array()
-st.write(cols)
+
+# load data
+dt = load_data()
+
 
 # Web-app to predict hourly rate
 if st.button("Estimate Hourly Rate"):
@@ -220,14 +259,16 @@ if st.button("Estimate Hourly Rate"):
 
         try:
             your_rate = estimate_hourly_rate()
-            st.write("We recommend an hourly rate of",
-                     round(your_rate[0]), "$")
 
         except:
             st.write("Something Broke")
+
+        # Print results
+        get_my_rate()
+        st.markdown('[Click here to create an account](https://www.guru.com/)')
+
 
 else:
     st.write("Put your inputs in above!")
 
 # Links to Guru.com
-st.markdown('[Create a freelance account!](https://www.guru.com/)')
