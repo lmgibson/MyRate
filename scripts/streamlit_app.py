@@ -169,19 +169,23 @@ def get_my_rate():
     rate_dist = dt[(dt[skill_categories.lower()] == 1)].hourly_rate.describe()
 
     med_rate = rate_dist[5]
-    min_rate = rate_dist[4]
-    max_rate = rate_dist[6]
+    iqr_lower = rate_dist[4]
+    iqr_upper = rate_dist[6]
     num_users = rate_dist[0]
 
     # Printing Results
-    st.write("We recommend an hourly rate of:", "$" + str(int(your_rate[0])), "  \n  \n"
-             "Of " + str(int(num_users)) + " users similar to you",
-             "the majority of active users had hourly rates between",
-             "$" + str(int(min_rate)), "and", "$" + str(int(max_rate)) + ".  \n" +
-             "Here are profiles of top-performing users who are similar to you:",
-             "  \n  \n1.", top_workers[0],
-             "  \n2.", top_workers[1],
-             "  \n3.", top_workers[2])
+    try:
+        st.write("We recommend an hourly rate of:", "$" + str(int(your_rate[0])), "  \n  \n"
+                 "Of " + str(int(num_users)) + " active users similar to you",
+                 "the majority of them had hourly rates between",
+                 "$" + str(int(iqr_lower)), "and", "$" + str(int(iqr_upper)) + ".  \n" +
+                 "Here are profiles of top-performing users who are similar to you:",
+                 "  \n  \n1.", top_workers[0],
+                 "  \n2.", top_workers[1],
+                 "  \n3.", top_workers[2])
+    except:
+        st.write("We recommend an hourly rate of:",
+                 "$" + str(int(your_rate[0])))
 
 ################################################
 
