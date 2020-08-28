@@ -203,6 +203,5 @@ for k, page in enumerate(htmls[0:3]):
 
 
 # Save to CSV
-filename = os.path.dirname(os.path.dirname(
-    (os.environ['PWD']))) + "/data/raw/freelancers.csv"
+filename = os.environ['PWD'] + "/data/raw/freelancers.csv"
 df.to_csv(filename)
