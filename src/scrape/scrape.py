@@ -1,8 +1,4 @@
 # Packages for Scraping
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
 import requests
 import random
@@ -17,151 +13,196 @@ import time
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
 import psycopg2
-
-# Utilities
 import os
 
 
 # Functions
-def extracting_jobs():
+def html_extract(x):
     """
-    Extracts the job titles on the page
+    Extracts and cleans the html from a website (x)
 
-    Returns a clean list of job titles
+    Returns soup object from beautiful soup
     """
-    job_box = driver.find_element_by_xpath(
-        '//*[@id="serviceList"]')
+    source = requests.get(x).text
+    soup = BeautifulSoup(source, 'html.parser')
 
-    return job_box
+    return soup
 
 
-def sel_obj_to_text(sel_ob):
+def freelancer_extraction(x):
     """
-    Takes in a list of selenium objects and extracts text.
+    Extracts freelancer information from a soup object returned by html_extract(X)
 
-    Returns a list of clean text of equal length to input list
+    Returns a list of freelancers.
     """
 
-    text_list = [x.get_attribute('innerText') for x in sel_ob]
+    # extracts the section that contains the freelancer data
+    a = x.body.form.main.main.section.find_all('ul')[1]
 
-    return text_list
+    # Create a list where each element is a freelancer.
+    # The element has a number of different tags for each data point.
+    b = a.find_all('div', class_="record__details")
+
+    return b
 
 
-def extracting_data():
+def header_content_extraction(x):
     """
-    Input selenium object that contains all jobs on a page
+    Extract header and content tags for a given freelancer (x).
 
-    Return dictionary with data
+    Returns a header and content object.
+        header: contains un-processed information on name, url, location
+        content: contains un-processed information on skills, rate, description
     """
-    data = {}
+    header = x.div
+    content = x.div.next_sibling.next_sibling
 
-    # Extracting job title
-    job_titles_raw = job_box.find_elements_by_xpath(
-        '//div/div[2]/div[1]/div[1]/h2/a')
-    job_titles = sel_obj_to_text(job_titles_raw)
-    data['job_titles'] = job_titles
-
-    # Extracting Pricing String
-    price_string_raw = job_box.find_elements_by_xpath(
-        '//div/div[2]/div[1]/div[1]/div[2]')
-    price_string = sel_obj_to_text(price_string_raw)
-
-    if len(price_string) > 20:
-        # It's picking up an empty box sometimes. Dropping that.
-        price_string = price_string[1:]
-
-    data['price_string'] = price_string
-
-    # Extracting Main Category
-    main_cat_raw = job_box.find_elements_by_xpath(
-        '//div/div[2]/div[2]/div[1]/div/span/a[1]')
-    main_cat = sel_obj_to_text(main_cat_raw)
-    data['main_category'] = main_cat
-
-    # Extracting Sub-Category - This can be missing
-    sub_cat_raw = job_box.find_elements_by_xpath(
-        '//div/div[2]/div[2]/div[1]/div/span/a[2]')
-    sub_cat = sel_obj_to_text(sub_cat_raw)
-
-    if len(sub_cat) < 20:
-        try:
-            index_to_fill = [i for i, x in enumerate(main_cat) if x == "Other"]
-        except:
-            print("No other in data")
-
-        try:
-            # Insert NA at location of Other in main_cat
-            sub_cat.insert(index_to_fill, "NA")
-        except:
-            # If there are multiple do them one by one. This will do them in order.
-            for i, val in enumerate(index_to_fill):
-                sub_cat.insert(val, "NA")
-
-    data['sub_category'] = sub_cat
-
-    # Extracting Number of Quotes
-    num_quotes_raw = job_box.find_elements_by_xpath(
-        '//div/div[2]/div[1]/div[1]/div[1]')
-    num_quotes = sel_obj_to_text(num_quotes_raw)
-
-    if len(num_quotes) > 20:
-        # Picks up some other junk text
-        num_quotes = num_quotes[2:]
-
-    data['num_quotes_str'] = num_quotes
-
-    #print(len(job_titles), len(price_string), len(main_cat), len(sub_cat), len(num_quotes))
-    df = pd.DataFrame(data)
-
-    return df
+    return header, content
 
 
-def pagination():
+def header_data_extract(x):
     """
-    The website doesn't have a 'next' button to change the page. This creates
-    a list that contains the current page numbers at the bottom of the page.
-    I use this against the current page number to determine which element to click.
+    Extract data from the header for a given freelancer.
+
+    Returns the following data in a dictionary:
+        - profile url
+        - city
+        - state
+        - country
     """
-    # Extracting Page Button Locations
-    pages_locations = driver.find_elements_by_xpath(
-        '//*[@id="ctl00_guB_ulpaginate"]/li')
 
-    # Extracting Text to match with page number
-    pages_text = [x.get_attribute('innerText') for x in pages_locations]
+    # Extracting data
+    profile_url = x.a['href']
 
-    # Figuring out next page index
-    next_page_index = pages_text.index(str(current_page)) + 2
+    city = x.find('span', class_="freelancerAvatar__location--city").string
+    state = x.find('span', class_="freelancerAvatar__location--state").string
+    country = x.find(
+        'span', class_="freelancerAvatar__location--country").string
 
-    # Setting xpath that will need to be clicked
-    xpath_to_click = '//*[@id="ctl00_guB_ulpaginate"]/li[' + \
-        str(next_page_index) + ']/a'
+    # The feedback section can be missing if a user has never received feedback.
+    # This try/except clause prevents sets rating to NA if it is blank.
+    try:
+        rating = x.find('span', class_="freelancerAvatar__feedback").text
+    except:
+        rating = "NA"
 
-    # Changing the page
-    driver.find_element_by_xpath(xpath_to_click).click()
+    # Same thing goes for earnings. However, someone may have earnings but not feedback.
+    # Therefore, they need to exist in separate try/except clauses.
+    try:
+        earnings = x.find('span', class_="freelancerAvatar__earnings").text
+    except:
+        earnings = "NA"
+
+    # Clearning commas off city and state
+    city = city.replace(',', '')
+    state = state.replace(',', '')
+
+    # Saving into a dictionary. This will later be combined with the content dict.
+    header = {"profile_url": profile_url, "city": city,
+              "state": state, "country": country, "rating": rating,
+              "earnings": earnings}
+
+    return header
 
 
-driver = webdriver.Firefox()
-driver.get("https://www.guru.com/d/jobs/pg/1")
+def content_data_extract(x):
+    """
+    Extracting data from the content
+    x is the content tag for a given freelancer
 
-current_page = 1
+    Returns the following data in a dictionary:
+        - Rates
+        - User Header Description
+        - Skills list
+    """
 
-for j in range(1, 100):
-    if j % 20 == 0:
+    # Extracting data from the soup HTML object
+    rates = x.find_all('p')[0].string
+    user_description_short = x.find(
+        'h2', class_="serviceListing__title").get_text()
 
-    job_box = extracting_jobs()
+    # Skills is a LIST of up to five elements.
+    skills_list = x.find_all(
+        'a', class_="skillsList__skill skillsList__skill--hasHover")
 
-    if j == 0:
-        data = extracting_data()
-    else:
-        tmp = extracting_data()
-        data = pd.concat([data, tmp], axis=0)
+    # Cleaning skills_list from messy html list to list of clean strings
+    # The lambda lambda function is applying a function to each element in the list.
+    # There may be a better way to do this? All in one line? List comprehension?
+    def string_clean(skills_list): return skills_list.string
+    skills_list_strings = list(map(string_clean, skills_list))
 
-    pagination()
-    current_page += 1
+    # Cleaning rates
+    p = re.compile(r'\d+')
+    result = p.findall(rates)
+    hourly_rate = int(result[0])  # First number is always hourly rate
 
-driver.close()
+    # Cleaning user description of indents and return
+    user_description_short = user_description_short.replace('\t', '')
+    user_description_short = user_description_short.replace('\r', '')
+    user_description_short = user_description_short.replace('\n', '')
 
-# Exporting Data to CSV
+    # Creating Dictionary. This will be combined with header.
+    content = {"hourly_rate": hourly_rate, "skills_list": skills_list_strings,
+               "user_description": user_description_short}
+
+    return content
+
+
+def add_table_to_db(dataframe, table_name):
+    """
+    Adds the data to a new table (details_table) in freelance_db.
+    inputs:
+        - dataframe: data you want to save to the databse
+        - table_name: The name you want to give the data in the database.
+
+    Doesn't return anything other than a message of completion.
+    """
+    dbname = "freelance_db"
+    username = os.environ['USER']
+    pswd = os.environ['SQLPSWD']
+
+    # Connect to the database and save data to it
+    engine = create_engine('postgresql://%s:%s@localhost/%s' %
+                           (username, pswd, dbname))
+    dataframe.to_sql(table_name, engine, if_exists='replace')
+
+    print("Added data to %s" % (dbname))
+
+
+# Creating list of urls to scrape
+html_core = "https://www.guru.com/d/freelancers/l/united-states/pg/"
+pg_nums = list(map(str, list(range(1, 947))))
+tmp = [s + "/" for s in pg_nums]
+htmls = [html_core + s for s in tmp]
+
+# Initializing empty dataframe to save results into
+df = pd.DataFrame(columns=["profile_url", "city", "state", "country",
+                           "rating", "earnings", "hourly_rate", "skills_list",
+                           "user_description"])
+
+# Looping over each URL and applying the functions, defined above,
+# In the order they are written.
+for k, page in enumerate(htmls[0:3]):
+
+    soup = html_extract(page)
+    freelancers = freelancer_extraction(soup)  # Clean HTML
+
+    if k % 1 == 0:
+        print(k)
+
+    for j, value in enumerate(freelancers):
+        header_content = header_content_extraction(
+            value)  # Extract two boxes of interest
+
+        results = header_data_extract(header_content[0])  # Extract header data
+        content = content_data_extract(
+            header_content[1])  # Extract content data
+        results.update(content)  # Combine into one dictionary
+        results = pd.DataFrame(results)
+        df = df.append(results)
+
+
+# Save to CSV
 filename = os.path.dirname(os.path.dirname(
-    os.environ['PWD'])) + '/data/raw/job_data.csv'
-data.to_csv(filename)
+    (os.environ['PWD']))) + "/data/raw/freelancers.csv"
+df.to_csv(filename)
