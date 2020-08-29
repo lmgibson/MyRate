@@ -169,39 +169,59 @@ def add_table_to_db(dataframe, table_name):
     print("Added data to %s" % (dbname))
 
 
-# Creating list of urls to scrape
-html_core = "https://www.guru.com/d/freelancers/l/united-states/pg/"
-pg_nums = list(map(str, list(range(1, 947))))
-tmp = [s + "/" for s in pg_nums]
-htmls = [html_core + s for s in tmp]
+def urls_to_scrape():
+    """
+    This creates a list of urls which can be iterated over and scraped.
+    """
+    html_core = "https://www.guru.com/d/freelancers/l/united-states/pg/"
+    pg_nums = list(map(str, list(range(1, 947))))
+    tmp = [s + "/" for s in pg_nums]
+    htmls = [html_core + s for s in tmp]
 
-# Initializing empty dataframe to save results into
-df = pd.DataFrame(columns=["profile_url", "city", "state", "country",
-                           "rating", "earnings", "hourly_rate", "skills_list",
-                           "user_description"])
-
-# Looping over each URL and applying the functions, defined above,
-# In the order they are written.
-for k, page in enumerate(htmls[0:3]):
-
-    soup = html_extract(page)
-    freelancers = freelancer_extraction(soup)  # Clean HTML
-
-    if k % 1 == 0:
-        print(k)
-
-    for j, value in enumerate(freelancers):
-        header_content = header_content_extraction(
-            value)  # Extract two boxes of interest
-
-        results = header_data_extract(header_content[0])  # Extract header data
-        content = content_data_extract(
-            header_content[1])  # Extract content data
-        results.update(content)  # Combine into one dictionary
-        results = pd.DataFrame(results)
-        df = df.append(results)
+    return htmls
 
 
-# Save to CSV
-filename = os.environ['PWD'] + "/data/raw/freelancers.csv"
-df.to_csv(filename)
+def scrape_static(strtPage=0, endPage=100):
+    """
+    Putting it all together.
+    This function uses all of the above functions to scrape the data.
+    The results are dumped into a csv that is saved at myrate/data/raw
+    """
+
+    htmls = urls_to_scrape()
+
+    # Initializing empty dataframe to save results into
+    df = pd.DataFrame(columns=["profile_url", "city", "state", "country",
+                               "rating", "earnings", "hourly_rate", "skills_list",
+                               "user_description"])
+
+    # Looping over each URL and applying the functions, defined above,
+    # In the order they are written.
+    for k, page in enumerate(htmls[strtPage:endPage]):
+
+        soup = html_extract(page)
+        freelancers = freelancer_extraction(soup)  # Clean HTML
+
+        if k % 25 == 0:
+            print('Progress: ' + str(k / 100) + '%...')
+
+        for j, value in enumerate(freelancers):
+            header_content = header_content_extraction(
+                value)  # Extract two boxes of interest
+
+            results = header_data_extract(
+                header_content[0])  # Extract header data
+            content = content_data_extract(
+                header_content[1])  # Extract content data
+            results.update(content)  # Combine into one dictionary
+            results = pd.DataFrame(results)
+            df = df.append(results)
+
+    # Save to CSV
+    filename = os.environ['PWD'] + "/data/raw/freelancers.csv"
+    df.to_csv(filename)
+
+    print("Completed scraping static elements of freelancer information.")
+
+
+scrape_static(0, 100)
