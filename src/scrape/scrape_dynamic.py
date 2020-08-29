@@ -275,66 +275,62 @@ def add_table_to_db(dataframe, table_name):
     print("Added data to %s" % (dbname))
 
 
-def scrape(strtPage=1, endPage=100):
-    driver = webdriver.Firefox()
-    driver.get("https://www.guru.com/d/freelancers/l/united-states/pg/1/")
+driver = webdriver.Firefox()
+driver.get("https://www.guru.com/d/freelancers/l/united-states/pg/1/")
 
-    pg_nums = range(1, 200)
+pg_nums = range(1, 200)
 
-    # Scraping
-    for j in range(0, 3):
+# Scraping
+for j in range(0, 3):
 
+    raw_html = details_about_scrape()
+
+    if len(raw_html[2]) != 20:
+        print("OH NO!")
+        time.sleep(1)
+        driver.refresh()
+        time.sleep(1)
         raw_html = details_about_scrape()
 
-        if len(raw_html[2]) != 20:
-            print("OH NO!")
-            time.sleep(1)
-            driver.refresh()
-            time.sleep(1)
-            raw_html = details_about_scrape()
+    user_urls_soup = raw_to_soup(raw_html[0])
+    user_details_soup = raw_to_soup(raw_html[1])
+    user_about_soup = raw_to_soup(raw_html[2])
 
-        user_urls_soup = raw_to_soup(raw_html[0])
-        user_details_soup = raw_to_soup(raw_html[1])
-        user_about_soup = raw_to_soup(raw_html[2])
+    user_urls_clean = soup_urls_to_html_list(user_urls_soup)
+    user_details_clean = soup_details_to_html_list(user_details_soup)
+    user_about_clean = soup_about_to_html_list(user_about_soup)
 
-        user_urls_clean = soup_urls_to_html_list(user_urls_soup)
-        user_details_clean = soup_details_to_html_list(user_details_soup)
-        user_about_clean = soup_about_to_html_list(user_about_soup)
+    combined_data = combine_clean_data(
+        user_urls_clean, user_details_clean, user_about_clean)
 
-        combined_data = combine_clean_data(
-            user_urls_clean, user_details_clean, user_about_clean)
+    if j == 0:
+        # On first pass make the dataframe
+        df_tmp = combine_into_dataframe(combined_data)
+        df_tmp.fillna(value=np.nan, inplace=True)
+    else:
+        # For all other passes just merge into the dataframe
+        tmp = combine_into_dataframe(combined_data)
+        tmp.fillna(value=np.nan, inplace=True)
+        df_tmp = pd.concat([df_tmp, tmp])
 
-        if j == 0:
-            # On first pass make the dataframe
-            df_tmp = combine_into_dataframe(combined_data)
-            df_tmp.fillna(value=np.nan, inplace=True)
-        else:
-            # For all other passes just merge into the dataframe
-            tmp = combine_into_dataframe(combined_data)
-            tmp.fillna(value=np.nan, inplace=True)
-            df_tmp = pd.concat([df_tmp, tmp])
+    print("Finished page " + str(j + 1))
 
-        print("Finished page " + str(j + 1))
+    # Changing the page
+    # First figuring out what page I'm on
+    cur_page_num = int(pg_nums[j])
+    goal_page_num = str(cur_page_num + 1)
 
-        # Changing the page
-        # First figuring out what page I'm on
-        cur_page_num = int(pg_nums[j])
-        goal_page_num = str(cur_page_num + 1)
+    # Then make a list of all page listings at the bottom of the current page
+    button_directory = pagination()
+    go_to = button_directory.index(goal_page_num)
 
-        # Then make a list of all page listings at the bottom of the current page
-        button_directory = pagination()
-        go_to = button_directory.index(goal_page_num)
+    # Create URL for the next page that I want to go to.
+    xpath_click = '/html/body/form/main/main/section/div/div[2]/div[2]/ul/li[' + str(
+        go_to + 1) + ']/a'
+    driver.find_element_by_xpath(xpath_click).click()
 
-        # Create URL for the next page that I want to go to.
-        xpath_click = '/html/body/form/main/main/section/div/div[2]/div[2]/ul/li[' + str(
-            go_to + 1) + ']/a'
-        driver.find_element_by_xpath(xpath_click).click()
+driver.close()
 
-    driver.close()
-
-    # Save results to csv
-    filename = os.environ['PWD'] + "/data/raw/freelancers_detail.csv"
-    df.to_csv(filename)
-
-
-scrape()
+# Save results to csv
+filename = os.environ['PWD'] + "/data/raw/freelancers_detail.csv"
+df_tmp.to_csv(filename)
