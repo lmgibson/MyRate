@@ -1,17 +1,18 @@
 # Scraping Libraries
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-import time
+from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 
-# Data Management and SQL Access Libraries
+# Utility
+import time
+
+# Data Management
 import pandas as pd
 import numpy as np
-# from sqlalchemy import create_engine
-# from sqlalchemy_utils import database_exists, create_database
-# import psycopg2
 import os
 
 
@@ -274,20 +275,30 @@ def pagination():
 
 #     print("Added data to %s" % (dbname))
 
+print("Starting up webdriver . . .")
 
-driver = webdriver.Remote(
-    command_executor='http://localhost:4444/wd/hub', desired_capabilities=caps)
+display = Display(visible=0, size=(800, 600))
+display.start()
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument("--headless")
+
+driver = webdriver.Chrome(chrome_options=chrome_options)
 driver.get("https://www.guru.com/d/freelancers/l/united-states/pg/1/")
 
 pg_nums = range(1, 200)
 
+print("Webdriver initiated. Beginning scrape procedure \n")
+
 # Scraping
 for j in range(0, 3):
+    print("Page: ", (j + 1))
 
     raw_html = details_about_scrape()
 
     if len(raw_html[2]) != 20:
-        print("OH NO!")
+        print("Something went wrong. Need to refresh the page.")
         time.sleep(1)
         driver.refresh()
         time.sleep(1)
@@ -330,9 +341,11 @@ for j in range(0, 3):
         go_to + 1) + ']/a'
     driver.find_element_by_xpath(xpath_click).click()
 
-driver.close()
+driver.quit()
+display.stop()
 
 # Save results to csv
-# filename = os.environ['PWD'] + "/data/raw/freelancers_detail.csv"
-filename = "./mounted_dir/freelancers_detail.csv"
+filename = "./freelancers_detail.csv"
 df_tmp.to_csv(filename)
+
+print("Successfully completed scrape. Returning a dataset with the following information: \n", df_tmp.info())
