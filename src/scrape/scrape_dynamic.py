@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup
 # Data Management and SQL Access Libraries
 import pandas as pd
 import numpy as np
-from sqlalchemy import create_engine
-from sqlalchemy_utils import database_exists, create_database
-import psycopg2
+# from sqlalchemy import create_engine
+# from sqlalchemy_utils import database_exists, create_database
+# import psycopg2
 import os
 
 
@@ -253,29 +253,30 @@ def pagination():
     return page_list
 
 
-def add_table_to_db(dataframe, table_name):
-    """
-    Adds the data to a new table (details_table) in freelance_db.
+# def add_table_to_db(dataframe, table_name):
+#     """
+#     Adds the data to a new table (details_table) in freelance_db.
 
-    """
-    # Try to figure out how to put these into a config file later.
-    dbname = 'freelance_db'
-    username = os.environ['USER']
-    pswd = os.environ['SQLPSWD']
+#     """
+#     # Try to figure out how to put these into a config file later.
+#     dbname = 'freelance_db'
+#     username = os.environ['USER']
+#     pswd = os.environ['SQLPSWD']
 
-    # Connect to the database
-    engine = create_engine('postgresql://%s:%s@localhost/%s' %
-                           (username, pswd, dbname))
-    print('postgresql://%s:%s@localhost/%s' % (username, pswd, dbname))
+#     # Connect to the database
+#     engine = create_engine('postgresql://%s:%s@localhost/%s' %
+#                            (username, pswd, dbname))
+#     print('postgresql://%s:%s@localhost/%s' % (username, pswd, dbname))
 
-    # insert data into database from Python (proof of concept - this won't be useful for big data, of course)
-    # df is any pandas dataframe
-    dataframe.to_sql(table_name, engine, if_exists='replace')
+#     # insert data into database from Python (proof of concept - this won't be useful for big data, of course)
+#     # df is any pandas dataframe
+#     dataframe.to_sql(table_name, engine, if_exists='replace')
 
-    print("Added data to %s" % (dbname))
+#     print("Added data to %s" % (dbname))
 
 
-driver = webdriver.Firefox()
+driver = webdriver.Remote(
+    command_executor='http://localhost:4444/wd/hub', desired_capabilities=caps)
 driver.get("https://www.guru.com/d/freelancers/l/united-states/pg/1/")
 
 pg_nums = range(1, 200)
@@ -332,5 +333,6 @@ for j in range(0, 3):
 driver.close()
 
 # Save results to csv
-filename = os.environ['PWD'] + "/data/raw/freelancers_detail.csv"
+# filename = os.environ['PWD'] + "/data/raw/freelancers_detail.csv"
+filename = "./mounted_dir/freelancers_detail.csv"
 df_tmp.to_csv(filename)

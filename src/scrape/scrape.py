@@ -10,9 +10,9 @@ import numpy as np
 import time
 
 # Packages for PostgreSQL Import
-from sqlalchemy import create_engine
-from sqlalchemy_utils import database_exists, create_database
-import psycopg2
+# from sqlalchemy import create_engine
+# from sqlalchemy_utils import database_exists, create_database
+# import psycopg2
 import os
 
 
@@ -218,10 +218,11 @@ def scrape_static(strtPage=0, endPage=100):
             df = df.append(results)
 
     # Save to CSV
-    filename = os.environ['PWD'] + "/data/raw/freelancers.csv"
+    # filename = os.environ['PWD'] + "/data/raw/freelancers.csv"
+    filename = "./freelancers.csv"
     df.to_csv(filename)
 
     print("Completed scraping static elements of freelancer information.")
 
 
-scrape_static(0, 100)
+scrape_static(0, 5)

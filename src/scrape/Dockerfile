@@ -1,45 +1,40 @@
+FROM python:3.8
 
-FROM ubuntu:trusty
+# Meta-Data
+LABEL maintainer="Landon Gibson <landon.g42@gmail.com>" \
+      description="Docker container for scraping with Selenium and BeautifulSoup"
 
-RUN apt-get update
+# Set working directory to /app
+WORKDIR /app
 
-RUN apt-get install -y python3 python3-pip
-
-RUN apt-get install -y libgconf2-4 libnss3-1d libxss1
-RUN apt-get install -y fonts-liberation libappindicator1 xdg-utils
-
-RUN apt-get install -y software-properties-common
-RUN apt-get install -y curl unzip wget
-
-RUN apt-get install -y xvfb
+# Copy current directory contents into /app
+COPY . /app
 
 
-# install geckodriver and firefox
+# Creating a mounted volume so I can move scraped data out
+VOLUME /app
 
-RUN GECKODRIVER_VERSION=`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'` && \
-    wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz && \
-    tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz -C /usr/local/bin && \
-    chmod +x /usr/local/bin/geckodriver
+# Install google chrome
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+RUN apt-get -y update
+RUN apt-get install -y google-chrome-stable
 
-RUN add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
-RUN apt-get update -y
-RUN apt-get install -y firefox
+# Install chromedriver
+RUN apt-get install -yqq unzip
+RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
+RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
+# Set display port to avoid crash
+ENV DISPLAY=:99
 
-# install phantomjs
+# Install required libraries
+# RUN pip install --upgrade pip
+RUN pip --no-cache-dir install selenium bs4 pandas numpy requests
 
-RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
-    tar -jxf phantomjs-2.1.1-linux-x86_64.tar.bz2 && cp phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+# Make port 8888 available to the outside world
+EXPOSE 8888
 
-RUN pip3 install --upgrade --ignore-installed urllib3
-RUN pip3 install selenium beautifulsoup4 requests sqlalchemy sqlalchemy_utils psycopg2 re
-RUN pip3 install pyvirtualdisplay
+#RUN pip install -r requirements.txt
 
-
-ENV APP_HOME /usr/src/app
-WORKDIR /$APP_HOME
-
-COPY ./hello_world.py $APP_HOME/
-
-CMD tail -f /dev/null
-CMD python3 hello_world.py
+CMD ["python", "./scrape.py"]
