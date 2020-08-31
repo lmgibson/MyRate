@@ -102,8 +102,17 @@ def details_about_scrape():
     counter = 3
     for i, val in enumerate(login_form):
         if i == counter:
-            login_form[i].click()
-            counter += 4
+            # This gets around the stale form error. However, I think there may be a better way
+            # that involves ignoring the error (selenium exception library).
+            # See: https://stackoverflow.com/questions/27003423/staleelementreferenceexception-on-python-selenium
+            try:
+                login_form[i].click()
+                counter += 4
+            except:
+                login_form = driver.find_elements_by_xpath(
+                    '//button[@class="tabControls__button"]')
+                login_form[i].click()
+                counter += 4
 
     time.sleep(2)
 
@@ -292,8 +301,9 @@ pg_nums = range(1, 200)
 print("Webdriver initiated. Beginning scrape procedure \n")
 
 # Scraping
-for j in range(0, 3):
-    print("Page: ", (j + 1))
+for j in range(0, 60):
+    if j % 10 == 0:
+        print("Progress: ", (j/60*100), "%")
 
     raw_html = details_about_scrape()
 
@@ -348,4 +358,5 @@ display.stop()
 filename = "./freelancers_detail.csv"
 df_tmp.to_csv(filename)
 
-print("Successfully completed scrape. Returning a dataset with the following information: \n", df_tmp.info())
+print("Successfully completed scrape. Returning a dataset with the following information: \n")
+df_tmp.info()
