@@ -1,3 +1,4 @@
+# Run command: docker run -v /Users/Metaverse/Desktop/Personal/Insight/projects/myrate/src/scrape:/app test
 FROM ubuntu:bionic
 
 # Meta-Data

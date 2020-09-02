@@ -8,6 +8,7 @@ notes_ignore
 **/*.ipynb_checkpoints/
 
 # Ignore geckodriver logs
+geckodriver*
 geckodriver.log
 chromedriver
 
