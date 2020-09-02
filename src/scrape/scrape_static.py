@@ -8,6 +8,7 @@ import re
 import pandas as pd
 import numpy as np
 import time
+import itertools
 
 # Packages for PostgreSQL Import
 # from sqlalchemy import create_engine
@@ -166,6 +167,7 @@ class GuruScraper:
 
         Returns soup object from beautiful soup
         """
+
         print("Extracting html data ... \n")
         soups = []
         for i, url in enumerate(self.htmls):
@@ -191,11 +193,12 @@ class GuruScraper:
             freelancers.append(users.find_all('div', class_="record__details"))
         self.freelancers = freelancers
 
-    def data_extraction(self, path):
+    def data_extraction(self, path="data/raw/"):
         scraped_data = pd.DataFrame(columns=["profile_url", "city", "state", "country",
                                              "rating", "earnings", "hourly_rate", "skills_list",
                                              "user_description"])
 
+        print("Extracting user data ...")
         for j, value in enumerate(self.freelancers):
             if j % 25 == 0:
                 print('Progress: ' + str((j / self.totalpages) * 100) + '%...')
@@ -218,9 +221,4 @@ class GuruScraper:
         filename = "./" + path + "freelancers.csv"
         data.to_csv(filename)
 
-
-# scraper = GuruScraper()
-# scraper.generate_urls(startPage=1, endPage=100)
-# scraper.html_extract()
-# scraper.freelancer_extraction()
-# scraper.data_extraction()
+        print("Static scrape completed.")

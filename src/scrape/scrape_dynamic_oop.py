@@ -291,25 +291,7 @@ class GuruDynamicScrape:
         # display.stop()
 
         # Save results to csv
-        filename = "./freelancers_detail.csv"
+        filename = "./data/raw/freelancers_detail.csv"
         self.pandas_data.to_csv(filename)
 
-        print("Successfully completed scrape.")
-
-
-# scraper = GuruDynamicScrape(pgEnd=2)
-# i = 1
-
-# while scraper.pgCur <= scraper.pgEnd:
-#     print("Scraping page:", scraper.pgCur)
-#     scraper.details_about_scrape()
-#     print(scraper.names)
-#     # scraper.detail_scrape_check()
-#     # scraper.raw_to_soup()
-#     # scraper.soups_to_html()
-#     # scraper.combine_clean_data()
-#     # scraper.combine_into_dataframe()
-#     # scraper.pagination()
-#     # print("Finished scraping page:", (scraper.pgCur - 1), "\n")
-#     i += 1
-# scraper.close()
+        print("Successfully completed dynamic data scrape.")
