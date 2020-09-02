@@ -1,21 +1,21 @@
 ,profile_url,city,state,country,rating,earnings,hourly_rate,skills_list,user_description
-0,/freelancers/darnell-digital-ink,Baltimore,Maryland,United States,NA,NA,8,"['CSS', 'Adobe Dreamweaver', 'Fireworks', 'HTML', 'JavaScript']",Web Development
-1,/freelancers/brycas,Westerville,Ohio,United States,NA,NA,8,"['Acrobat', 'Brochures', 'Clean', 'Design', 'Direct Mail Pieces']",Brochures
-2,/freelancers/marcus-hubbard,Decatur,Georgia,United States,NA,NA,8,"['3D Studio VIZ Software', 'Adobe After Effects', 'Adobe Fireworks', 'Adobe Illustrator', 'Adobe Photoshop']",Animator
-3,/freelancers/kayla-j,Charlotte,North Carolina,United States,NA,NA,8,"['Associated Press (AP) Style', 'Articles', 'Blog Writing', 'Blogging', 'Grammar']",News Writing & Reporting
-4,/freelancers/phillip-mccabe,Louisville,Kentucky,United States,NA,NA,8,"['Apache', 'FTP', 'iptables', 'LAMP Stack', 'Linux']",Linux Server Configuration & Deployment
-5,/freelancers/robin-c-farrell,Frederick,Maryland,United States,NA,NA,8,"['Basketball Writing', 'Broadcasting', 'College', 'Event Videography', 'Football']",Sports Replay Operation
-6,/freelancers/computer-works,san antonio,Texas,United States,NA,NA,8,[],Network Administration
-7,/freelancers/intelligent-consulting-1160633,Greenville,South Carolina,United States,NA,NA,8,"['Access', 'Amazon', 'ASP', 'ASP.NET', 'Basic']",Database Administration
-8,/freelancers/jzielinski,Chicago,Illinois,United States,NA,NA,8,"['3d', '3ds Max', 'Artist', 'Character Design', 'Customer Service']",Child Book Illustration
-9,/freelancers/business-services-plus-1071487,Elko,Nevada,United States,NA,NA,8,"['QuickBooks', 'Quicken']",Word Processing
-10,/freelancers/ddcdevelopment,Omaha,Nebraska,United States,NA,NA,8,"['Billing', 'Customer Service', 'Data Entry', 'Executive Assistant', 'Medical']",Word Processing
-11,/freelancers/rabia-mahmood-1438926,Aurora,Illinois,United States,NA,NA,8,"['Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Cartoon', 'Design']",Design Guru
-12,/freelancers/crystal-acworth,Philadelphia,Pennsylvania,United States,NA,NA,8,"['Filemaker', 'Filemaker Pro', 'Microsoft']",Word Processing
-13,/freelancers/chris-lawrence-1,NORTH LAS VEGAS,Nevada,United States,NA,NA,8,"['Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'HTML', 'WordPress']",ALL GRAPHIC DESIGNS
-14,/freelancers/kelly-gammons,El Cerrito,California,United States,NA,NA,8,"['Audio', 'Consulting', 'Creative Suite', 'CSS', 'CSS3']","Drupal, Wordpress, Front-end developer."
-15,/freelancers/big-data-hadoop-business-analyst,Charlotte,North Carolina,United States,NA,NA,8,[],IT Training
-16,/freelancers/ebucsku1,Lakeland,Florida,United States,NA,NA,8,[],Data Entry
-17,/freelancers/dana-m-1211323,Lancaster,Pennsylvania,United States,NA,NA,8,"['Communication Skills', 'Microsoft', 'Oral Communication', 'SAP']",Data Entry
-18,/freelancers/uranyanwu,New York,New York,United States,NA,NA,8,[],Criminal
-19,/freelancers/sotuachair,Saint Louis,Missouri,United States,NA,NA,8,"['Adobe Photoshop', 'Articles', 'Facebook', 'Final Draft', 'GIMP']",Articles
+0,/freelancers/robin-l-reed,Medford,Oregon,United States, 100% ,NA,100,"['English Grammar', 'English Punctuation', 'Proofreading']",Proofreading
+1,/freelancers/james-jefferson,Concord,New Hampshire,United States, 100% ,NA,100,"['Article Writing', 'Blogs', 'Editing & Proofreading', 'Ghost Writing & Books', 'Report Writing']",Seasoned Writer
+2,/freelancers/douglas-stewart,Ellicott City,Maryland,United States,NA,NA,100,"['Book Writing', 'Fantasy Writing', 'Ghostwriting', 'Short Stories']",Ghostwriter
+3,/freelancers/phoenix-fire,Baldwinsville,New York,United States, 100% ,NA,100,"['Articles', 'Blogs', 'Content Creation', 'Content Writing', 'Management']",Quality Content at Your Finger Tips
+4,/freelancers/homeshopmachinist,Chillicothe,Ohio,United States, 100% ,NA,100,"['3D Design', '3D Modeling', 'CNC Programming', 'Machine Design', 'Metal Fabrication']",Computerized Machining
+5,/freelancers/sisley-candy-m,Albany,New York,United States, 100% ,NA,100,"['Amazon Kindle', 'Book Writing', 'Cookbook Writing', 'Cover & Page Design', 'eBook Writing']",BOOK WRITER & GHOSTWRITER
+6,/freelancers/kevin-nsofor,Manassas,Virginia,United States,NA,NA,100,"['Article Writing', 'Blog Writing', 'Content Writing', 'Fashion', 'International']",SEO article  writing and rewriting
+7,/freelancers/le-hill-writes,Bethlehem,Pennsylvania,United States, 100% ,NA,100,"['Academic Research', 'Administrative Assistant', 'Article Writing', 'Blog Writing', 'Content Writing']",LE Hill Writes
+8,/freelancers/karina-duvall,San Diego,California,United States, 100% ,NA,100,"['Blog Post', 'Copy Editing', 'Copywriting', 'Creative Writing', 'E Commerce']",Copywriter and more
+9,/freelancers/el-capit-n-ink,Jacksonville,Florida,United States, 100% ,NA,100,"['Artist', 'Cartoon', 'Character Concept', 'Comics', 'Graphics']",T-shirt Graphics
+10,/freelancers/justin-newton,Cincinnati,Ohio,United States, 100% ,NA,100,"['Audio Books', 'Audio Editing', 'Audio Engineering', 'Audio Mastering', 'Audio Mixing']","Audio, editing, mixing, mastering."
+11,/freelancers/pdlweb,Calverton,New York,United States,NA,NA,100,"['Access', 'Basic', 'C', 'C#', 'C++']",Programming
+12,/freelancers/rachelle-nunn,San Juan Capistrano,California,United States,NA,NA,100,"['Administrative Assistant', 'Drafting', 'Estate Planning', 'Family Lawyers', 'Law']",Legal Assistant/Paralegal
+13,/freelancers/bastien-anderson,New Alexandria,Pennsylvania,United States,NA,NA,100,"['Adobe', 'Adobe Photoshop', 'Adobe Premiere Pro', 'Editing', 'Photography']",Photographer/Editor
+14,/freelancers/zeforow-a,Windermere,Florida,United States,NA,NA,100,"['Artist', 'Comics', 'Digital', 'Digital Art', 'Graphite']",digital & traditional artist
+15,/freelancers/brandon-michael-cascia,Westminster,Maryland,United States,NA,NA,100,"['Community Development', 'Creative', 'Energy Management', 'Microsoft Word']",Master Magician
+16,/freelancers/deepti-goel,Plano,Texas,United States,NA,NA,100,"['Academic Writing', 'Article Writing', 'Content Writing', 'Digital Marketing', 'eBooks']",Digital Marketing and Content Writing
+17,/freelancers/kcthecreativeguru,Brooklyn,New York,United States,NA,NA,100,"['Administrative Assistant', 'Blog Writing', 'Contracts', 'Creative', 'Director']",Administrative / Creative Guru
+18,/freelancers/jillian-price,Wilder,Kentucky,United States,NA,NA,100,"['Administrative Assistant', 'Copy & Paste', 'Graphic Design', 'Media And Public Relations (PR)', 'Office Assistant']",Virtual Assistant and Social Media
+19,/freelancers/renee-steward,Woodbury,Minnesota,United States,NA,NA,100,"['Adobe Lightroom', 'Adobe Photoshop', 'Content Writing', 'Creative', 'Editing']",Photography
