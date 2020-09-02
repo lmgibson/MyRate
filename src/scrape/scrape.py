@@ -166,13 +166,16 @@ class GuruScraper:
 
         Returns soup object from beautiful soup
         """
+        print("Extracting html data ... \n")
         soups = []
         for i, url in enumerate(self.htmls):
+            if i % 10 == 0:
+                print('Progress: ' + str((i / self.totalpages) * 100) + '%...')
             source = requests.get(url).text
             soups.append(BeautifulSoup(source, 'html.parser'))
         self.soup = soups
 
-        print("Extracted all htmls ... \n")
+        print("Extracted all htmls. \n")
 
     def freelancer_extraction(self):
         """
@@ -187,8 +190,6 @@ class GuruScraper:
             users = soup.body.form.main.main.section.find_all('ul')[1]
             freelancers.append(users.find_all('div', class_="record__details"))
         self.freelancers = freelancers
-
-        print("Extracted all freelancer information ... \n")
 
     def data_extraction(self):
         scraped_data = pd.DataFrame(columns=["profile_url", "city", "state", "country",
@@ -214,15 +215,12 @@ class GuruScraper:
             data = pd.DataFrame(header)
             scraped_data = scraped_data.append(data)
 
-        return scraped_data
+        filename = "./data/raw/freelancers.csv"
+        data.to_csv(filename)
 
 
 scraper = GuruScraper()
 scraper.generate_urls(startPage=1, endPage=100)
 scraper.html_extract()
 scraper.freelancer_extraction()
-data = scraper.data_extraction()
-
-# Save to CSV
-filename = "./data/raw/freelancers.csv"
-data.to_csv(filename)
+scraper.data_extraction()

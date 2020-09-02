@@ -69,7 +69,6 @@ def details_about_scrape():
         time.sleep(1)  # Wait to scrape
         login_form = driver.find_elements_by_xpath(
             '//button[@class="tabControls__button"]')
-    else:
         login_form_click()
 
     # Every user has 4 buttons. This clicks the 3rd button for each user and opens
@@ -106,6 +105,7 @@ def details_about_scrape():
             # that involves ignoring the error (selenium exception library).
             # See: https://stackoverflow.com/questions/27003423/staleelementreferenceexception-on-python-selenium
             try:
+                time.sleep(2)
                 login_form[i].click()
                 counter += 4
             except:
@@ -263,27 +263,6 @@ def pagination():
     return page_list
 
 
-# def add_table_to_db(dataframe, table_name):
-#     """
-#     Adds the data to a new table (details_table) in freelance_db.
-
-#     """
-#     # Try to figure out how to put these into a config file later.
-#     dbname = 'freelance_db'
-#     username = os.environ['USER']
-#     pswd = os.environ['SQLPSWD']
-
-#     # Connect to the database
-#     engine = create_engine('postgresql://%s:%s@localhost/%s' %
-#                            (username, pswd, dbname))
-#     print('postgresql://%s:%s@localhost/%s' % (username, pswd, dbname))
-
-#     # insert data into database from Python (proof of concept - this won't be useful for big data, of course)
-#     # df is any pandas dataframe
-#     dataframe.to_sql(table_name, engine, if_exists='replace')
-
-#     print("Added data to %s" % (dbname))
-
 print("Starting up webdriver . . .")
 
 display = Display(visible=0, size=(800, 600))
@@ -296,7 +275,7 @@ chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(chrome_options=chrome_options)
 driver.get("https://www.guru.com/d/freelancers/l/united-states/pg/1/")
 
-pg_nums = range(1, 200)
+pg_nums = range(1, 5)
 
 print("Webdriver initiated. Beginning scrape procedure \n")
 
