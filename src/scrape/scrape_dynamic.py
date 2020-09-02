@@ -303,7 +303,7 @@ print("Webdriver initiated. Beginning scrape procedure \n")
 # Scraping
 for j in range(0, 60):
     if j % 10 == 0:
-        print("Progress: ", (j/60*100), "%")
+        print("Progress: ", (j / 60 * 100), "%")
 
     raw_html = details_about_scrape()
 

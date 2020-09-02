@@ -9,6 +9,7 @@ notes_ignore
 
 # Ignore geckodriver logs
 geckodriver.log
+chromedriver
 
 # Ignoring the weird pycharm .idea file
 .idea
@@ -18,3 +19,9 @@ geckodriver.log
 
 # Ignoring pycache
 __pycache__
+
+# Ignoring test cases
+example.py
+
+# Ignoring data
+*.csv

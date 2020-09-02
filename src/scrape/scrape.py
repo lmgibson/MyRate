@@ -16,213 +16,213 @@ import time
 import os
 
 
-# Functions
-def html_extract(x):
-    """
-    Extracts and cleans the html from a website (x)
+class FreelanceScrape:
 
-    Returns soup object from beautiful soup
-    """
-    source = requests.get(x).text
-    soup = BeautifulSoup(source, 'html.parser')
+    def __init__(self, freelancer):
+        self.freelancer = freelancer
 
-    return soup
+    def header_content_extraction(self):
+        """
+        Extract header and content tags for a given freelancer.
+        Input is a list of freelancers
 
+        Returns a list of a header and content of freelancers.
+            header: contains un-processed information on name, url, location
+            content: contains un-processed information on skills, rate, description
+        """
+        header = []
+        content = []
+        for i, user in enumerate(self.freelancer):
+            header.append(user.div)
+            content.append(user.div.next_sibling.next_sibling)
 
-def freelancer_extraction(x):
-    """
-    Extracts freelancer information from a soup object returned by html_extract(X)
+        self.header = header
+        self.content = content
 
-    Returns a list of freelancers.
-    """
+    def header_data_extract(self):
+        """
+        Extract data from the header for a given freelancer.
 
-    # extracts the section that contains the freelancer data
-    a = x.body.form.main.main.section.find_all('ul')[1]
+        Returns the following data in a dictionary:
+            - profile url
+            - city
+            - state
+            - country
+        """
+        profile_url = []
+        city = []
+        state = []
+        country = []
+        rating = []
+        earnings = []
 
-    # Create a list where each element is a freelancer.
-    # The element has a number of different tags for each data point.
-    b = a.find_all('div', class_="record__details")
+        for i, data in enumerate(self.header):
+            # Extracting data
+            profile_url.append(data.a['href'])
 
-    return b
+            city.append(data.find(
+                'span', class_="freelancerAvatar__location--city").string.replace(',', ''))
+            state.append(data.find(
+                'span', class_="freelancerAvatar__location--state").string.replace(',', ''))
+            country.append(data.find(
+                'span', class_="freelancerAvatar__location--country").string)
 
+            # The feedback section can be missing if a user has never received feedback.
+            # This try/except clause prevents sets rating to NA if it is blank.
+            try:
+                rating.append(data.find(
+                    'span', class_="freelancerAvatar__feedback").text)
+            except:
+                rating.append("NA")
 
-def header_content_extraction(x):
-    """
-    Extract header and content tags for a given freelancer (x).
+            # Same thing goes for earnings. However, someone may have earnings but not feedback.
+            # Therefore, they need to exist in separate try/except clauses.
+            try:
+                earnings.append(data.find(
+                    'span', class_="freelancerAvatar__earnings").text)
+            except:
+                earnings.append("NA")
 
-    Returns a header and content object.
-        header: contains un-processed information on name, url, location
-        content: contains un-processed information on skills, rate, description
-    """
-    header = x.div
-    content = x.div.next_sibling.next_sibling
+        # Saving into a dictionary. This will later be combined with the content dict.
+        header_data = {"profile_url": profile_url, "city": city,
+                       "state": state, "country": country, "rating": rating,
+                       "earnings": earnings}
 
-    return header, content
+        self.header_dataframe = header_data
 
+    def content_data_extract(self):
+        """
+        Extracting data from the content
+        x is the content tag for a given freelancer
 
-def header_data_extract(x):
-    """
-    Extract data from the header for a given freelancer.
+        Returns the following data in a dictionary:
+            - Rates
+            - User Header Description
+            - Skills list
+        """
 
-    Returns the following data in a dictionary:
-        - profile url
-        - city
-        - state
-        - country
-    """
+        rates = []
+        user_descriptions = []
+        skills_list = []
 
-    # Extracting data
-    profile_url = x.a['href']
+        for i, data in enumerate(self.content):
+            # Extracting data from the soup HTML object
+            rate = data.find_all('p')[0].string
+            user_description = data.find(
+                'h2', class_="serviceListing__title").get_text()
 
-    city = x.find('span', class_="freelancerAvatar__location--city").string
-    state = x.find('span', class_="freelancerAvatar__location--state").string
-    country = x.find(
-        'span', class_="freelancerAvatar__location--country").string
+            # Skills is a LIST of up to five elements.
+            skills = data.find_all(
+                'a', class_="skillsList__skill skillsList__skill--hasHover")
 
-    # The feedback section can be missing if a user has never received feedback.
-    # This try/except clause prevents sets rating to NA if it is blank.
-    try:
-        rating = x.find('span', class_="freelancerAvatar__feedback").text
-    except:
-        rating = "NA"
+            # Cleaning skills_list from messy html list to list of clean strings
+            # The lambda lambda function is applying a function to each element in the list.
+            # There may be a better way to do this? All in one line? List comprehension?
+            def string_clean(skills): return skills.string
+            skills_list_strings = list(map(string_clean, skills))
 
-    # Same thing goes for earnings. However, someone may have earnings but not feedback.
-    # Therefore, they need to exist in separate try/except clauses.
-    try:
-        earnings = x.find('span', class_="freelancerAvatar__earnings").text
-    except:
-        earnings = "NA"
+            # Cleaning rates
+            p = re.compile(r'\d+')
+            result = p.findall(rate)
+            hourly_rate = int(result[0])  # First number is always hourly rate
 
-    # Clearning commas off city and state
-    city = city.replace(',', '')
-    state = state.replace(',', '')
+            # Cleaning user description of indents and return
 
-    # Saving into a dictionary. This will later be combined with the content dict.
-    header = {"profile_url": profile_url, "city": city,
-              "state": state, "country": country, "rating": rating,
-              "earnings": earnings}
+            user_description = user_description.replace('\t', '')
+            user_description = user_description.replace('\r', '')
+            user_description = user_description.replace('\n', '')
 
-    return header
+            # Appending results
+            rates.append(hourly_rate)
+            user_descriptions.append(user_description)
+            skills_list.append(skills_list_strings)
 
+        # Creating Dictionary. This will be combined with header.
+        content_data = {"hourly_rate": hourly_rate, "skills_list": skills_list,
+                        "user_description": user_descriptions}
 
-def content_data_extract(x):
-    """
-    Extracting data from the content
-    x is the content tag for a given freelancer
+        self.content_dataframe = content_data
 
-    Returns the following data in a dictionary:
-        - Rates
-        - User Header Description
-        - Skills list
-    """
+class GuruScraper:
 
-    # Extracting data from the soup HTML object
-    rates = x.find_all('p')[0].string
-    user_description_short = x.find(
-        'h2', class_="serviceListing__title").get_text()
+    def __init__(self):
+        pass
 
-    # Skills is a LIST of up to five elements.
-    skills_list = x.find_all(
-        'a', class_="skillsList__skill skillsList__skill--hasHover")
+    def generate_urls(self, startPage=1, endPage=100):
+        """
+        This creates a list of urls which can be iterated over and scraped.
+        """
+        html_core = "https://www.guru.com/d/freelancers/l/united-states/pg/"
+        pg_nums = list(map(str, list(range(startPage, endPage))))
+        tmp = [s + "/" for s in pg_nums]
+        htmls = [html_core + s for s in tmp]
 
-    # Cleaning skills_list from messy html list to list of clean strings
-    # The lambda lambda function is applying a function to each element in the list.
-    # There may be a better way to do this? All in one line? List comprehension?
-    def string_clean(skills_list): return skills_list.string
-    skills_list_strings = list(map(string_clean, skills_list))
+        self.htmls = htmls
+        self.totalpages = endPage
 
-    # Cleaning rates
-    p = re.compile(r'\d+')
-    result = p.findall(rates)
-    hourly_rate = int(result[0])  # First number is always hourly rate
+    def html_extract(self):
+        """
+        Extracts and cleans the html from a website (x)
 
-    # Cleaning user description of indents and return
-    user_description_short = user_description_short.replace('\t', '')
-    user_description_short = user_description_short.replace('\r', '')
-    user_description_short = user_description_short.replace('\n', '')
+        Returns soup object from beautiful soup
+        """
+        soups = []
+        for i, url in enumerate(self.htmls):
+            source = requests.get(url).text
+            soups.append(BeautifulSoup(source, 'html.parser'))
+        self.soup = soups
 
-    # Creating Dictionary. This will be combined with header.
-    content = {"hourly_rate": hourly_rate, "skills_list": skills_list_strings,
-               "user_description": user_description_short}
+        print("Extracted all htmls ... \n")
 
-    return content
+    def freelancer_extraction(self):
+        """
+        Extracts freelancer information from a soup object returned by html_extract.
 
+        Returns a list of lists where each sub-list is a page of freelancers
+        """
 
-def add_table_to_db(dataframe, table_name):
-    """
-    Adds the data to a new table (details_table) in freelance_db.
-    inputs:
-        - dataframe: data you want to save to the databse
-        - table_name: The name you want to give the data in the database.
+        freelancers = []
+        for i, soup in enumerate(self.soup):
+            # extracts the section that contains the freelancer data and their data
+            users = soup.body.form.main.main.section.find_all('ul')[1]
+            freelancers.append(users.find_all('div', class_="record__details"))
+        self.freelancers = freelancers
 
-    Doesn't return anything other than a message of completion.
-    """
-    dbname = "freelance_db"
-    username = os.environ['USER']
-    pswd = os.environ['SQLPSWD']
+        print("Extracted all freelancer information ... \n")
 
-    # Connect to the database and save data to it
-    engine = create_engine('postgresql://%s:%s@localhost/%s' %
-                           (username, pswd, dbname))
-    dataframe.to_sql(table_name, engine, if_exists='replace')
+    def data_extraction(self):
+        scraped_data = pd.DataFrame(columns=["profile_url", "city", "state", "country",
+                                             "rating", "earnings", "hourly_rate", "skills_list",
+                                             "user_description"])
 
-    print("Added data to %s" % (dbname))
+        for j, value in enumerate(self.freelancers):
+            if j % 25 == 0:
+                print('Progress: ' + str((j / self.totalpages) * 100) + '%...')
 
+            freelancer = FreelanceScrape(value)
 
-def urls_to_scrape():
-    """
-    This creates a list of urls which can be iterated over and scraped.
-    """
-    html_core = "https://www.guru.com/d/freelancers/l/united-states/pg/"
-    pg_nums = list(map(str, list(range(1, 947))))
-    tmp = [s + "/" for s in pg_nums]
-    htmls = [html_core + s for s in tmp]
+            freelancer.header_content_extraction()
+            freelancer.header_data_extract()
+            freelancer.content_data_extract()
 
-    return htmls
+            # # Extract two boxes of interest
+            header = freelancer.header_dataframe
+            content = freelancer.content_dataframe
 
+            # # Combine into one dictionary
+            header.update(content)
+            data = pd.DataFrame(header)
+            scraped_data = scraped_data.append(data)
 
-def scrape_static(strtPage=0, endPage=100):
-    """
-    Putting it all together.
-    This function uses all of the above functions to scrape the data.
-    The results are dumped into a csv that is saved at myrate/data/raw
-    """
-
-    htmls = urls_to_scrape()
-
-    # Initializing empty dataframe to save results into
-    df = pd.DataFrame(columns=["profile_url", "city", "state", "country",
-                               "rating", "earnings", "hourly_rate", "skills_list",
-                               "user_description"])
-
-    # Looping over each URL and applying the functions, defined above,
-    # In the order they are written.
-    for k, page in enumerate(htmls[strtPage:endPage]):
-
-        soup = html_extract(page)
-        freelancers = freelancer_extraction(soup)  # Clean HTML
-
-        if k % 25 == 0:
-            print('Progress: ' + str(k / 100) + '%...')
-
-        for j, value in enumerate(freelancers):
-            header_content = header_content_extraction(
-                value)  # Extract two boxes of interest
-
-            results = header_data_extract(
-                header_content[0])  # Extract header data
-            content = content_data_extract(
-                header_content[1])  # Extract content data
-            results.update(content)  # Combine into one dictionary
-            results = pd.DataFrame(results)
-            df = df.append(results)
-
-    # Save to CSV
-    # filename = os.environ['PWD'] + "/data/raw/freelancers.csv"
-    filename = "./freelancers.csv"
-    df.to_csv(filename)
-
-    print("Completed scraping static elements of freelancer information.")
+        return scraped_data
 
 
-scrape_static(0, 5)
+scraper = GuruScraper()
+scraper.generate_urls(startPage=1, endPage=100)
+scraper.html_extract()
+scraper.freelancer_extraction()
+data = scraper.data_extraction()
+
+# Save to CSV
+filename = "./data/raw/freelancers.csv"
+data.to_csv(filename)
