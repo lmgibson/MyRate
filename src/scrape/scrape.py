@@ -22,7 +22,7 @@ import pandas as pd
 import numpy as np
 import os
 
-# Scraping Static Elements
+Scraping Static Elements
 scraper = ss.GuruScraper()
 scraper.generate_urls(startPage=1, endPage=50)
 scraper.html_extract()

@@ -216,9 +216,9 @@ class GuruScraper:
             # # Combine into one dictionary
             header.update(content)
             data = pd.DataFrame(header)
-            scraped_data = scraped_data.append(data)
+            scraped_data = scraped_data.append(data, ignore_index=True)
 
         filename = "./" + path + "freelancers.csv"
-        data.to_csv(filename)
+        scraped_data.to_csv(filename)
 
         print("Static scrape completed.")

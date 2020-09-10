@@ -29,3 +29,6 @@ example.py
 
 # Ignoring archive folder
 archive
+
+# Ignoring rhistory
+.Rhistory

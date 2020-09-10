@@ -34,6 +34,7 @@ class GuruDynamicScrape:
         self.pgCur = pgStart
         self.pgEnd = pgEnd
         self.driver = driver
+        self.past_first = False
 
         print("Webdriver initiated. Beginning scrape procedure \n")
 
@@ -254,7 +255,11 @@ class GuruDynamicScrape:
         df = pd.DataFrame(data=self.data, columns=["profile_url", "member_since", "earnings_pst_yr", "earnings_ever",
                                                    "employers", "invoices_paid", "largest_employ", "bio"])
 
-        self.pandas_data = df
+        if self.past_first == False:
+            self.pandas_data = df
+            self.past_first = True
+        else:
+            self.pandas_data = self.pandas_data.append(df, ignore_index=True)
 
     def pagination(self):
         """
