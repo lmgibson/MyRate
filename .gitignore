@@ -32,3 +32,7 @@ archive
 
 # Ignoring rhistory
 .Rhistory
+
+# Adding irrelevant datasets
+census-regions
+simplemaps_uscities_basicv1.6

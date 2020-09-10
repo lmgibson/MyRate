@@ -1,6 +1,7 @@
-# Scrape commands
-import scrape_static as ss
-import scrape_dynamic_oop as sd
+# Scrape and Clean commands
+from scrape import scrape_static as ss
+from scrape import scrape_dynamic_oop as sd
+from data_cleaning import clean as cl
 
 # Scraping Libraries
 from pyvirtualdisplay import Display
@@ -22,7 +23,7 @@ import pandas as pd
 import numpy as np
 import os
 
-Scraping Static Elements
+# Scraping Static Elements
 scraper = ss.GuruScraper()
 scraper.generate_urls(startPage=1, endPage=50)
 scraper.html_extract()
@@ -46,3 +47,6 @@ while scraper.pgCur <= scraper.pgEnd:
     print("Finished scraping page:", (scraper.pgCur - 1), "\n")
     i += 1
 scraper.close()
+
+# Cleaning data
+cl.CleanData()
