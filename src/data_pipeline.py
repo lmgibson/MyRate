@@ -1,7 +1,7 @@
 # Scrape and Clean commands
-from scrape import scrape_static as ss
-from scrape import scrape_dynamic_oop as sd
-from data_cleaning import clean as cl
+from src.scrape import scrape_static as ss
+from src.scrape import scrape_dynamic_oop as sd
+from src.data_cleaning import clean as cl
 
 # Scraping Libraries
 from pyvirtualdisplay import Display
