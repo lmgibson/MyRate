@@ -8,6 +8,7 @@ import os
 # Packages for Data Management
 import pandas as pd
 import numpy as np
+from datetime import date
 
 
 class CleanData:
@@ -59,10 +60,23 @@ class CleanData:
         user_data['start_date'] = user_data.member_since.apply(date_convert)
         user_data['years_active'] = user_data.start_date.apply(years_active)
         user_data['months_active'] = user_data.start_date.apply(months_active)
+        today = date.today().strftime("%d/%m/%Y")
+        user_data['date_accessed'] = today
 
         # Processed data
-        filename = "./data/processed/user_data.csv"
+        today = date.today().strftime("%d%m%Y")
+        filename = "./data/processed/user_data_" + today + ".csv"
         user_data.to_csv(filename)
+
+    def merge_data(self):
+        today = date.today().strftime("%d%m%Y")
+        clean_data = pd.read_csv("./data/cleaned/user_data.csv")
+        new_data = pd.read_csv("./data/processed/user_data_" + today + ".csv")
+
+        merged_data = clean_data.append(new_data, ignore_index=True)
+
+        filename = "./data/cleaned/user_data.csv"
+        merged_data.to_csv(filename)
 
 
 CleanData()

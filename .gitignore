@@ -36,3 +36,12 @@ archive
 # Adding irrelevant datasets
 census-regions
 simplemaps_uscities_basicv1.6
+
+# Ignore data files that are large
+user_data*
+
+# Vscode
+.vscode/
+
+# Bash script to run data pipeline
+pull_and_merge_data
