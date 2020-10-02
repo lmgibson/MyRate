@@ -77,6 +77,3 @@ class CleanData:
 
         filename = "./data/cleaned/user_data.csv"
         merged_data.to_csv(filename)
-
-
-CleanData()
