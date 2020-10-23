@@ -1,8 +1,7 @@
 # Scrape and Clean commands
-from scrape import scrape_static as ss
-# from scrape import scrape_dynamic_oop as sd
-from data_cleaning import clean as cl
-from upload_data import convert_to_json as up
+from freelance_scrape import scrape as ss
+from freelance_scrape import clean as cl
+from freelance_scrape import upload as up
 
 # Scraping Static Elements
 scraper = ss.GuruScraper()

@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from airtable import Airtable
 from datetime import date
+import json
 
 
 class ImportData:
@@ -11,9 +12,11 @@ class ImportData:
         Converts data to a dictionary that can be batch uploaded to an
         airtable database.
         """
+        # Loading data into python
         today = date.today().strftime("%d%m%Y")
-        filename = "./data/processed/user_data_" + today + ".csv"
-        df = pd.read_csv(filename)
+        filename = "./data/processed/user_data_" + today + ".json"
+        with open(filename) as f:
+            records = json.load(f)
 
         # Uploading Data
         api_key = os.environ['AIRTABLE_API_KEY']
@@ -21,5 +24,4 @@ class ImportData:
         table_name = 'freelancers'
         airtable = Airtable(base_key, table_name, api_key)
 
-        records = df.to_dict(orient='records')
         airtable.batch_insert(records)
