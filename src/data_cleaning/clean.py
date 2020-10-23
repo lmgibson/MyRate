@@ -15,56 +15,20 @@ class CleanData:
     def __init__(self):
 
         # Importing Data and cleaning
-        static = pd.read_csv("./data/raw/freelancers.csv")
-        # dynamic = pd.read_csv("./data/raw/freelancers_detail.csv")
+        user_data = pd.read_csv("./data/raw/freelancers.csv")
+        user_data.drop([static.columns[0], 'city', 'country',
+                        'earnings', 'user_description'],
+                       axis=1, inplace=True)
 
-        static.drop([static.columns[0], 'city', 'country',
-                     'earnings', 'user_description'],
-                    axis=1, inplace=True)
-
-        user_data = static
-        # dynamic.drop([dynamic.columns[0], 'employers', 'invoices_paid',
-        #               'largest_employ'], axis=1, inplace=True)
-
-        # Merging
-        # user_data = static.merge(dynamic, how="inner", on="profile_url")
-
-        # Creating key features
-
-        # def date_convert(member_since):
-        #     try:
-        #         tmp = datetime.strptime(member_since, '%b, %Y')
-        #     except:
-        #         tmp = 'NaN'
-        #     return tmp
-
-        # def years_active(date):
-        #     cur_year = datetime.now().year
-        #     try:
-        #         yrs_active = cur_year - date.year
-        #     except:
-        #         yrs_active = 'NaN'
-
-        #     return yrs_active
-
-        # def months_active(date):
-        #     cur_year = datetime.now().year
-        #     cur_month = datetime.now().month
-
-        #     try:
-        #         mnths_active = (cur_year - date.year) * \
-        #             12 + (cur_month - date.month)
-        #     except:
-        #         mnths_active = 'NaN'
-
-        #     return mnths_active
-
-        # user_data.member_since = user_data.member_since.str.strip()
-        # user_data['start_date'] = user_data.member_since.apply(date_convert)
-        # user_data['years_active'] = user_data.start_date.apply(years_active)
-        # user_data['months_active'] = user_data.start_date.apply(months_active)
         today = date.today().strftime("%d/%m/%Y")
         user_data['date_accessed'] = today
+
+        user_data = user_data[['profile_url', 'date_accessed', 'hourly_rate']]
+        user_data['profile_url'] = user_data['profile_url'].str.replace(
+            '/freelancers/', '')
+        user_data['date_accessed'] = pd.to_datetime(
+            user_data['date_accessed'], format='%d/%m/%Y')
+        user_data['date_accessed'] = user_data['date_accessed'].astype(str)
 
         # Processed data
         today = date.today().strftime("%d%m%Y")
