@@ -15,6 +15,7 @@ import pandas as pd
 import numpy as np
 import os
 
+
 class GuruDynamicScrape:
 
     def __init__(self, pgStart=1, pgEnd=3):

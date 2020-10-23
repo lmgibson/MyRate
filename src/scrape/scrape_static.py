@@ -1,4 +1,4 @@
-# Packages for Scraping
+# # Packages for Scraping
 from bs4 import BeautifulSoup
 import requests
 import random
@@ -11,9 +11,6 @@ import time
 import itertools
 
 # Packages for PostgreSQL Import
-# from sqlalchemy import create_engine
-# from sqlalchemy_utils import database_exists, create_database
-# import psycopg2
 import os
 
 
@@ -31,14 +28,8 @@ class FreelanceScrape:
             header: contains un-processed information on name, url, location
             content: contains un-processed information on skills, rate, description
         """
-        header = []
-        content = []
-        for i, user in enumerate(self.freelancer):
-            header.append(user.div)
-            content.append(user.div.next_sibling.next_sibling)
-
-        self.header = header
-        self.content = content
+        self.header = self.freelancer.div
+        self.content = self.freelancer.div.next_sibling.next_sibling
 
     def header_data_extract(self):
         """
@@ -50,44 +41,22 @@ class FreelanceScrape:
             - state
             - country
         """
-        profile_url = []
-        city = []
-        state = []
-        country = []
-        rating = []
-        earnings = []
-
-        for i, data in enumerate(self.header):
-            # Extracting data
-            profile_url.append(data.a['href'])
-
-            city.append(data.find(
-                'span', class_="freelancerAvatar__location--city").string.replace(',', ''))
-            state.append(data.find(
-                'span', class_="freelancerAvatar__location--state").string.replace(',', ''))
-            country.append(data.find(
-                'span', class_="freelancerAvatar__location--country").string)
-
-            # The feedback section can be missing if a user has never received feedback.
-            # This try/except clause prevents sets rating to NA if it is blank.
-            try:
-                rating.append(data.find(
-                    'span', class_="freelancerAvatar__feedback").text)
-            except:
-                rating.append("NA")
-
-            # Same thing goes for earnings. However, someone may have earnings but not feedback.
-            # Therefore, they need to exist in separate try/except clauses.
-            try:
-                earnings.append(data.find(
-                    'span', class_="freelancerAvatar__earnings").text)
-            except:
-                earnings.append("NA")
+        profile_url = self.header.a['href']
+        city = self.header.find(
+            'span', class_="freelancerAvatar__location--city").string.replace(',', '')
+        state = self.header.find(
+            'span', class_="freelancerAvatar__location--state").string.replace(',', '')
+        country = self.header.find(
+            'span', class_="freelancerAvatar__location--country").string
+        try:
+            earnings = self.header.find(
+                'span', class_="earnings__amount").text
+        except:
+            earnings = "NA"
 
         # Saving into a dictionary. This will later be combined with the content dict.
         header_data = {"profile_url": profile_url, "city": city,
-                       "state": state, "country": country, "rating": rating,
-                       "earnings": earnings}
+                       "state": state, "country": country, "earnings": earnings}
 
         self.header_dataframe = header_data
 
@@ -102,47 +71,34 @@ class FreelanceScrape:
             - Skills list
         """
 
-        rates = []
-        user_descriptions = []
-        skills_list = []
+        rate = self.content.find('p', class_="serviceListing__rates").string
+        user_description = self.content.find(
+            'h2', class_="serviceListing__title").get_text()
+        skills = self.content.find_all(
+            'a', class_="skillsList__skill skillsList__skill--hasHover")
 
-        for i, data in enumerate(self.content):
-            # Extracting data from the soup HTML object
-            rate = data.find_all('p')[0].string
-            user_description = data.find(
-                'h2', class_="serviceListing__title").get_text()
+        # Cleaning skills_list from messy html list to list of clean strings
+        # The lambda lambda function is applying a function to each element in the list.
+        # There may be a better way to do this? All in one line? List comprehension?
+        def string_clean(skills): return skills.string
+        skills = list(map(string_clean, skills))
 
-            # Skills is a LIST of up to five elements.
-            skills = data.find_all(
-                'a', class_="skillsList__skill skillsList__skill--hasHover")
+        # Cleaning rates
+        p = re.compile(r'\d+')
+        result = p.findall(rate)
+        rate = int(result[0])  # First number is always hourly rate
 
-            # Cleaning skills_list from messy html list to list of clean strings
-            # The lambda lambda function is applying a function to each element in the list.
-            # There may be a better way to do this? All in one line? List comprehension?
-            def string_clean(skills): return skills.string
-            skills_list_strings = list(map(string_clean, skills))
-
-            # Cleaning rates
-            p = re.compile(r'\d+')
-            result = p.findall(rate)
-            hourly_rate = int(result[0])  # First number is always hourly rate
-
-            # Cleaning user description of indents and return
-
-            user_description = user_description.replace('\t', '')
-            user_description = user_description.replace('\r', '')
-            user_description = user_description.replace('\n', '')
-
-            # Appending results
-            rates.append(hourly_rate)
-            user_descriptions.append(user_description)
-            skills_list.append(skills_list_strings)
+        # Cleaning user description of indents and return
+        user_description = user_description.replace('\t', '')
+        user_description = user_description.replace('\r', '')
+        user_description = user_description.replace('\n', '')
 
         # Creating Dictionary. This will be combined with header.
-        content_data = {"hourly_rate": hourly_rate, "skills_list": skills_list,
-                        "user_description": user_descriptions}
+        content_data = {"hourly_rate": rate, "skills_list": skills,
+                        "user_description": user_description}
 
         self.content_dataframe = content_data
+
 
 class GuruScraper:
 
@@ -171,12 +127,11 @@ class GuruScraper:
         print("Extracting html data ... \n")
         soups = []
         for i, url in enumerate(self.htmls):
-            if i % 10 == 0:
-                print('Progress: ' + str((i / self.totalpages) * 100) + '%...')
+            if i % 2 == 0:
+                print('Progress: ' + str((i / self.totalpages) * 100) + '% ...')
             source = requests.get(url).text
             soups.append(BeautifulSoup(source, 'html.parser'))
         self.soup = soups
-
         print("Extracted all htmls. \n")
 
     def freelancer_extraction(self):
@@ -187,21 +142,26 @@ class GuruScraper:
         """
 
         freelancers = []
-        for i, soup in enumerate(self.soup):
+        for i, soup_data in enumerate(self.soup):
             # extracts the section that contains the freelancer data and their data
-            users = soup.body.form.main.main.section.find_all('ul')[1]
+            users = soup_data.body.form.main.main.section.find_all('ul')[1]
             freelancers.append(users.find_all('div', class_="record__details"))
-        self.freelancers = freelancers
+
+        # Flattening freelancers from list of lists to list
+        flat_list = []
+        for sublist in freelancers:
+            for item in sublist:
+                flat_list.append(item)
+        print(len(flat_list))
+        self.freelancers = flat_list
 
     def data_extraction(self, path="data/raw/"):
-        scraped_data = pd.DataFrame(columns=["profile_url", "city", "state", "country",
-                                             "rating", "earnings", "hourly_rate", "skills_list",
-                                             "user_description"])
+        scraped_data = []
 
         print("Extracting user data ...")
         for j, value in enumerate(self.freelancers):
-            if j % 25 == 0:
-                print('Progress: ' + str((j / self.totalpages) * 100) + '%...')
+            if j % 20 == 0:
+                print('Progress: ' + str((j / len(self.freelancers)) * 100) + '%...')
 
             freelancer = FreelanceScrape(value)
 
@@ -215,10 +175,10 @@ class GuruScraper:
 
             # # Combine into one dictionary
             header.update(content)
-            data = pd.DataFrame(header)
-            scraped_data = scraped_data.append(data, ignore_index=True)
+            scraped_data.append(header)
 
+        dt = pd.DataFrame(scraped_data)
         filename = "./" + path + "freelancers.csv"
-        scraped_data.to_csv(filename)
+        dt.to_csv(filename)
 
         print("Static scrape completed.")

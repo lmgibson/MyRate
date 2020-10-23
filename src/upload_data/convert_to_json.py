@@ -1,14 +1,19 @@
+import os
+import pandas as pd
+from airtable import Airtable
+from datetime import date
+
+
 class ImportData:
 
-    def __init__(self, data):
-        self.data = data
-
-    def upload(self):
+    def __init__(self):
         """
         Converts data to a dictionary that can be batch uploaded to an
         airtable database.
         """
-        df = pd.read_csv("./data/cleaned/user_data.csv")
+        today = date.today().strftime("%d%m%Y")
+        filename = "./data/processed/user_data_" + today + ".csv"
+        df = pd.read_csv(filename)
 
         # Prepping Data for Upload
         df = df[['profile_url', 'date_accessed', 'hourly_rate']]
