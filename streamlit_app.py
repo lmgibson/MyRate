@@ -18,6 +18,8 @@ airtable = Airtable(base_key, table_name, api_key)
 dt = airtable.get_all(maxRecords=20)
 df = pd.DataFrame.from_records((r['fields'] for r in dt))
 
-# Setting up the Interactive Web-App
-# Welcome Splash
-st.markdown("**Hourly Rate Estimator:** Welcome! Enter your information below and I'll estimate what your hourly rate should be.")
+# Building web app
+st.title("Freelance Hourly Rate Data")
+st.markdown(
+    "Welcome! This app provides data and trends of freelancer hourly rates.")
+st.write(df.groupby(['date_accessed'])['hourly_rate'].mean())

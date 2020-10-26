@@ -1,181 +1,181 @@
 ,profile_url,city,state,country,earnings,hourly_rate,skills_list,user_description
-0,/freelancers/scopic,Rutland,Massachusetts,United States,"1,274,500",24,"['Angular', 'ASP.NET', 'AWS', 'Bootstrap', 'CSS']",Web Application Development
-1,/freelancers/top-guru-assistants,Laguna Beach,California,United States,"267,110",20,"['Android', 'Application Development', 'BigCommerce', 'CMS (Content Management System)', 'CodeIgniter']",Mobile and Web Application Development
-2,/freelancers/eden-programming-solutions,Oakland,California,United States,"238,160",70,"['Android', 'Android Development', 'App Development', 'iOS', 'Software Development']",iOS & Android App Development
-3,/freelancers/avion-technology-inc-chicago,Arlington Heights,Illinois,United States,"163,971",15,"['.NET', 'Ajax', 'AngularJS', 'Basic', 'Business Consulting']",Web design and development
-4,/freelancers/openwork-tech,Seminole,Florida,United States,"158,190",80,"['Full Stack', 'Java', 'Mobile Development', 'Software Development', 'Text Messaging']",Full Stack Mobile App Developer
+0,/freelancers/scopic,Rutland,Massachusetts,United States,"1,273,173",24,"['Angular', 'ASP.NET', 'AWS', 'Bootstrap', 'CSS']",Web Application Development
+1,/freelancers/top-guru-assistants,Laguna Beach,California,United States,"266,850",20,"['Android', 'Application Development', 'BigCommerce', 'CMS (Content Management System)', 'CodeIgniter']",Mobile and Web Application Development
+2,/freelancers/eden-programming-solutions,Oakland,California,United States,"237,450",70,"['Android', 'Android Development', 'App Development', 'iOS', 'Software Development']",iOS & Android App Development
+3,/freelancers/avion-technology-inc-chicago,Arlington Heights,Illinois,United States,"163,954",15,"['.NET', 'Ajax', 'AngularJS', 'Basic', 'Business Consulting']",Web design and development
+4,/freelancers/openwork-tech,Seminole,Florida,United States,"160,590",80,"['Full Stack', 'Java', 'Mobile Development', 'Software Development', 'Text Messaging']",Full Stack Mobile App Developer
 5,/freelancers/j-consulting,Alexandria,Virginia,United States,"131,590",50,"['.NET', 'Access', 'Ado', 'Analysis', 'Angular']",Software Development
 6,/freelancers/smart-software-solutions-inc-482125,Pierre,South Dakota,United States,"121,557",65,"['.NET', 'Ajax', 'Analysis', 'Apache', 'C']",Programming
-7,/freelancers/jalacrity,MIAMI,Florida,United States,"106,864",5,[],Layout & Desktop Publishing
+7,/freelancers/jalacrity,MIAMI,Florida,United States,"106,483",5,[],Layout & Desktop Publishing
 8,/freelancers/beksconsulting,Krum,Texas,United States,"80,205",60,"['Business Intelligence', 'Data Analysis', 'Data Collection', 'Data Management', 'Data Warehousing']",SQL Server Database Services
 9,/freelancers/stephenwhite,Vancouver,Washington,United States,"80,005",60,"['Admin Support', 'Ajax', 'Application Development', 'ASP', 'ASP.NET']","Web Development - C#, VB.Net, ASP.Net"
-10,/freelancers/grata-tech-solutions,Ocala,Florida,United States,"72,910",70,"['Adobe Photoshop', 'Animation', 'App Development', 'Design', 'Logo Design']","Web & Mobile Design, Development"
+10,/freelancers/grata-tech-solutions,Ocala,Florida,United States,"71,040",70,"['Adobe Photoshop', 'Animation', 'App Development', 'Design', 'Logo Design']","Web & Mobile Design, Development"
 11,/freelancers/taplabs,Seattle,Washington,United States,"65,167",65,"['AngularJS', 'Apollo GraphQL', 'AWS Elastic Beanstalk', 'Bootstrap', 'CakePHP']",Web App Development
 12,/freelancers/kreb-digital-solutions,Oviedo,Florida,United States,"58,405",55,"['Android Development', 'iOS App Development', 'JavaScript', 'Mobile App Development', 'Mobile Development']",Full-Stack Mobile developer
 13,/freelancers/sakthiguru,Morrisville,North Carolina,United States,"56,670",50,"['API', 'BigCommerce', 'Corporate', 'Dashboard', 'Developer']",Web development
-14,/freelancers/illusion-software-development,Hammond,Louisiana,United States,"55,500",60,"['Angular', 'CSS3', 'Django', 'Flask', 'HTML5']",Full stack Web Development
-15,/freelancers/mv-squared,Weston,Massachusetts,United States,"52,260",90,"['Analytics', 'Data Management', 'Database Design', 'Excel', 'Google Sheets']",Data Management/Machine Learning
-16,/freelancers/marco-samson,Lumberton,New Jersey,United States,"44,855",65,"['Amazon AWS', 'Android', 'Apache Cordova', 'Back End Development', 'Cocoapod']",React Native & Ionic & Swift Mobile App
-17,/freelancers/nathanial-mckay,Clearwater,Florida,United States,"41,750",60,"['Angular', 'Consultant', 'CSS', 'CSS3', 'Design']",Sr. Web Developer
-18,/freelancers/fan-wei-tsui,Masaryktown,Florida,United States,"37,555",65,"['Dot Net', 'Full Stack', 'Image Processing', 'MATLAB', 'Microsoft']",Data scientist | Full Stack | ML | AI
-19,/freelancers/kimberly-verdi,Mount Holly,North Carolina,United States,"35,674",15,"['Analytics', 'Digital', 'Graphic Design', 'Marketing', 'Media And Public Relations (PR)']",Smrc
-20,/freelancers/alp-bakir,Los Angeles,California,United States,"35,056",70,"['CSS', 'Design', 'HTML', 'HTML5', 'Java']",Senior Web Developer
-21,/freelancers/ken-gold,Philadelphia,Pennsylvania,United States,"33,440",50,"['Android', 'Android Development', 'Android Programming', 'Facebook', 'Game Design']","iOS, Android, Ruby, PHP, PrestaShop"
-22,/freelancers/joel-kim-1,Deltona,Florida,United States,"33,280",65,"['Adobe Photoshop', 'Android', 'Android Development', 'AngularJS', 'App Development']",Full stack Web & Mobile Developer
-23,/freelancers/paul-words,New York,New York,United States,"33,067",18,"['Article Writing', 'Blog Writing', 'eBook Writing', 'Press Release Writing', 'Web Content']","Articles, Blogs, eBooks, PRs & Web Copy"
-24,/freelancers/nino-acuna,Orlando,Florida,United States,"31,820",60,"['.NET', 'Amazon', 'Angular', 'AWS', 'Engineering']",Senior React/React Native Developer
-25,/freelancers/jeffrey-r-smoots,Everett,Washington,United States,"31,812",55,"['Database Development', 'Microsoft', 'Microsoft Access', 'Microsoft SQL Server', 'ODBC']",Microsoft Access / SQL Server
-26,/freelancers/bisontech-code-warriors,Newark,California,United States,"31,130",85,"['Android Development', 'App Development', 'Flutter', 'Flutter App Development', 'iOS App Development']",iOS & Android Mobile App Development
-27,/freelancers/ken-b-1083572,Corbin,Kentucky,United States,"30,000",25,"['Ajax', 'C', 'C#', 'C++', 'Content Management']",Programming
-28,/freelancers/nicholas-f-couch,Hanover,Maryland,United States,"29,750",10,"['Music Composing', 'Music Production']",Music Producer
-29,/freelancers/ios-app-developer-thomas-woodfin,Denver,Colorado,United States,"27,075",30,"['Android', 'Cocos2D', 'Corona SDK', 'HTML5', 'iOS']",Game Development
-30,/freelancers/tahir-choudhry,Westchester,New York,United States,"26,832",10,"['Amazon Kindle', 'Book Writing', 'Books', 'Branding', 'eBooks']",Ghostwrite E book for Kindle
-31,/freelancers/dawn2429,Henderson,Kentucky,United States,"26,284",16,"['Lead Generation', 'Sales', 'Telemarketing']",Field Sales
-32,/freelancers/ac-alpha-consulting,Burlington,Vermont,United States,"25,228",75,"['Apparel', 'Branding', 'Content Writing', 'Descriptive Writing', 'Digital']","Product Description Copywriting, Brands"
-33,/freelancers/visual-content-communications,Hadley,Massachusetts,United States,"24,667",85,"['Content Marketing', 'Content Writing', 'Copy Editing', 'Copy Writing', 'Copywriting']",Full-service Copywriting & Editing
-34,/freelancers/spacealpha,Spring,Texas,United States,"22,553",70,"['Full Stack', 'Web Development']",Full Stack Web Developer
-35,/freelancers/piedmont-copy-desk,Belmont,North Carolina,United States,"22,541",22,"['Clean', 'e-Books', 'Editing', 'Editing & Proofreading', 'English Language']",E-Books
-36,/freelancers/sherry-writes-for-you,Drayden,Maryland,United States,"22,198",50,"['Book Writing', 'Ghostwriting', 'Ghost Writing & Books', 'Graphic Design', 'Research']",Book Writing
-37,/freelancers/james-mays-1,Louisville,Kentucky,United States,"21,000",55,"['Android', 'Android Development', 'App Development', 'Blockchain', 'C++']",Professional Mobile App Developer
-38,/freelancers/super-writer-guy,Sierra Madre,California,United States,"20,344",5,"['Article Editing', 'Article Marketing', 'Article Writing', 'Articles', 'Blog Marketing']",Writing & Research Services
-39,/freelancers/jerrick-cuahutle,Westfield,Indiana,United States,"20,300",50,"['Altium Designer', 'Communication Skills', 'Consumer Electronics', 'Design', 'Digital']","PCB Design with Kicad, Altium Designer"
-40,/freelancers/wise-writing-and-editing,Gauley Bridge,West Virginia,United States,"19,854",30,"['Academic Writing', 'Articles', 'Book Editing', 'Book Writing', 'Editing']",Proofreading and Editing.
-41,/freelancers/angela-naff-1,Sarasota,Florida,United States,"19,023",15,"['Creative Design', 'Ghostwriting', 'Technical Writing', 'Writing', 'Creative']",Writing - Ghostwriting
-42,/freelancers/empiricaledge,Marlton,New Jersey,United States,"18,160",25,"['.NET', 'API', 'ASP', 'ASP.NET', 'Cms']",Custom Application Design & Development
-43,/freelancers/mariana-franzetti,Culver City,California,United States,"17,881",45,"['Editing', 'Illustration', 'Photo & Image Editing']",Freelance Graphic Designer
-44,/freelancers/steve-cox,Greenville,Michigan,United States,"17,137",10,"['Articles', 'Blogs', 'Press Releases', 'Web Content', 'Writing']",Content Writer
-45,/freelancers/edgar-bolivar,Clovis,New Mexico,United States,"16,877",60,"['.NET', 'Amazon AWS', 'Angular', 'C#', 'Django']",Full Stack Web Developer
-46,/freelancers/nsoft-group,Elizabeth,New Jersey,United States,"16,649",60,"['Adobe Photoshop', 'Amazon', 'Angular', 'App Development', 'CSS']",Web app development
-47,/freelancers/hunter-foley,Louisville,Ohio,United States,"16,320",60,"['CSS', 'HTML', 'JavaScript', 'PHP', 'ReactJS']",React|Vue|Angular|PHP|Node|... Developer
-48,/freelancers/christopher-frick,Seattle,Washington,United States,"14,850",40,"['Data Management', 'Database Development', 'Email', 'Microsoft', 'Microsoft Access']","MS VBA - Word, Excel, Access, Outlook"
-49,/freelancers/lisamariebrennan,Ukiah,California,United States,"13,710",8,"['Comics', 'Design', 'Logo Design', 'Murals', 'Child Book Illustration']",Child Book Illustration
+14,/freelancers/katherine-kroom,Jacksonville,Florida,United States,"55,121",20,"['2D Animation', '3D Design', '3D Modeling', '3D Rendering', 'API Development']",Digital Solutions Provider
+15,/freelancers/illusion-software-development,Hammond,Louisiana,United States,"53,900",60,"['Angular', 'CSS3', 'Django', 'Flask', 'HTML5']",Full stack Web Development
+16,/freelancers/mv-squared,Weston,Massachusetts,United States,"52,260",90,"['Analytics', 'Data Management', 'Database Design', 'Excel', 'Google Sheets']",Data Management/Machine Learning
+17,/freelancers/marco-samson,Lumberton,New Jersey,United States,"43,530",65,"['Amazon AWS', 'Android', 'Apache Cordova', 'Back End Development', 'Cocoapod']",React Native & Ionic & Swift Mobile App
+18,/freelancers/nathanial-mckay,Clearwater,Florida,United States,"41,750",60,"['Angular', 'Consultant', 'CSS', 'CSS3', 'Design']",Sr. Web Developer
+19,/freelancers/hardworker1989,Houston,Texas,United States,"41,550",8,"['Form Design', 'Form Filling', 'Format & Layout', 'PDF Conversion', 'PDF Design']",PDF Forms Developer
+20,/freelancers/bisontech-code-warriors,Newark,California,United States,"40,230",85,"['Android Development', 'App Development', 'Flutter', 'Flutter App Development', 'iOS App Development']",iOS & Android Mobile App Development
+21,/freelancers/fan-wei-tsui,Masaryktown,Florida,United States,"38,155",65,"['Dot Net', 'Full Stack', 'Image Processing', 'MATLAB', 'Microsoft']",Data scientist | Full Stack | ML | AI
+22,/freelancers/kimberly-verdi,Mount Holly,North Carolina,United States,"35,674",15,"['Analytics', 'Digital', 'Graphic Design', 'Marketing', 'Media And Public Relations (PR)']",Smrc
+23,/freelancers/alp-bakir,Los Angeles,California,United States,"35,056",70,"['CSS', 'Design', 'HTML', 'HTML5', 'Java']",Senior Web Developer
+24,/freelancers/nino-acuna,Orlando,Florida,United States,"34,420",60,"['.NET', 'Amazon', 'Angular', 'AWS', 'Engineering']",Senior React/React Native Developer
+25,/freelancers/ken-gold,Philadelphia,Pennsylvania,United States,"33,290",50,"['Android', 'Android Development', 'Android Programming', 'Facebook', 'Game Design']","iOS, Android, Ruby, PHP, PrestaShop"
+26,/freelancers/joel-kim-1,Deltona,Florida,United States,"33,280",65,"['Adobe Photoshop', 'Android', 'Android Development', 'AngularJS', 'App Development']",Full stack Web & Mobile Developer
+27,/freelancers/paul-words,New York,New York,United States,"32,669",18,"['Article Writing', 'Blog Writing', 'eBook Writing', 'Press Release Writing', 'Web Content']","Articles, Blogs, eBooks, PRs & Web Copy"
+28,/freelancers/jeffrey-r-smoots,Everett,Washington,United States,"31,812",55,"['Database Development', 'Microsoft', 'Microsoft Access', 'Microsoft SQL Server', 'ODBC']",Microsoft Access / SQL Server
+29,/freelancers/ken-b-1083572,Corbin,Kentucky,United States,"30,000",25,"['Ajax', 'C', 'C#', 'C++', 'Content Management']",Programming
+30,/freelancers/nicholas-f-couch,Hanover,Maryland,United States,"29,750",10,"['Music Composing', 'Music Production']",Music Producer
+31,/freelancers/ios-app-developer-thomas-woodfin,Denver,Colorado,United States,"27,075",30,"['Android', 'Cocos2D', 'Corona SDK', 'HTML5', 'iOS']",Game Development
+32,/freelancers/tahir-choudhry,Westchester,New York,United States,"26,667",10,"['Amazon Kindle', 'Book Writing', 'Books', 'Branding', 'eBooks']",Ghostwrite E book for Kindle
+33,/freelancers/dawn2429,Henderson,Kentucky,United States,"26,284",16,"['Lead Generation', 'Sales', 'Telemarketing']",Field Sales
+34,/freelancers/ac-alpha-consulting,Burlington,Vermont,United States,"25,228",75,"['Apparel', 'Branding', 'Content Writing', 'Descriptive Writing', 'Digital']","Product Description Copywriting, Brands"
+35,/freelancers/visual-content-communications,Hadley,Massachusetts,United States,"24,342",85,"['Content Marketing', 'Content Writing', 'Copy Editing', 'Copy Writing', 'Copywriting']",Full-service Copywriting & Editing
+36,/freelancers/spacealpha,Spring,Texas,United States,"22,553",70,"['Full Stack', 'Web Development']",Full Stack Web Developer
+37,/freelancers/piedmont-copy-desk,Belmont,North Carolina,United States,"22,541",22,"['Clean', 'e-Books', 'Editing', 'Editing & Proofreading', 'English Language']",E-Books
+38,/freelancers/sherry-writes-for-you,Drayden,Maryland,United States,"22,198",50,"['Book Writing', 'Ghostwriting', 'Ghost Writing & Books', 'Graphic Design', 'Research']",Book Writing
+39,/freelancers/james-mays-1,Louisville,Kentucky,United States,"21,000",55,"['Android', 'Android Development', 'App Development', 'Blockchain', 'C++']",Professional Mobile App Developer
+40,/freelancers/jerrick-cuahutle,Westfield,Indiana,United States,"20,300",50,"['Altium Designer', 'Communication Skills', 'Consumer Electronics', 'Design', 'Digital']","PCB Design with Kicad, Altium Designer"
+41,/freelancers/super-writer-guy,Sierra Madre,California,United States,"19,954",5,"['Article Editing', 'Article Marketing', 'Article Writing', 'Articles', 'Blog Marketing']",Writing & Research Services
+42,/freelancers/wise-writing-and-editing,Gauley Bridge,West Virginia,United States,"19,289",30,"['Academic Writing', 'Articles', 'Book Editing', 'Book Writing', 'Editing']",Proofreading and Editing.
+43,/freelancers/angela-naff-1,Sarasota,Florida,United States,"19,210",15,"['Creative Design', 'Ghostwriting', 'Technical Writing', 'Writing', 'Creative']",Writing - Ghostwriting
+44,/freelancers/empiricaledge,Marlton,New Jersey,United States,"18,160",25,"['.NET', 'API', 'ASP', 'ASP.NET', 'Cms']",Custom Application Design & Development
+45,/freelancers/mariana-franzetti,Culver City,California,United States,"17,200",45,"['Editing', 'Illustration', 'Photo & Image Editing']",Freelance Graphic Designer
+46,/freelancers/edgar-bolivar,Clovis,New Mexico,United States,"16,877",60,"['.NET', 'Amazon AWS', 'Angular', 'C#', 'Django']",Full Stack Web Developer
+47,/freelancers/steve-cox,Greenville,Michigan,United States,"16,762",10,"['Articles', 'Blogs', 'Press Releases', 'Web Content', 'Writing']",Content Writer
+48,/freelancers/nsoft-group,Elizabeth,New Jersey,United States,"16,649",60,"['Adobe Photoshop', 'Amazon', 'Angular', 'App Development', 'CSS']",Web app development
+49,/freelancers/christopher-frick,Seattle,Washington,United States,"14,850",40,"['Data Management', 'Database Development', 'Email', 'Microsoft', 'Microsoft Access']","MS VBA - Word, Excel, Access, Outlook"
 50,/freelancers/jon-roussel-1,Dallas,Texas,United States,"13,674",30,"['Acquisition Sales', 'Cold Calling', 'Email Marketing', 'Internet Advertising', 'Lead Generation']",Expert Sales Representative
-51,/freelancers/barbara-a-besteni,Miramar,Florida,United States,"13,210",25,"['Blogging', 'Content Writing', 'Copy Editing', 'Copy Editing', 'Creative']",Proofreader/Copy Editor
-52,/freelancers/adam-freund-design-llc,Bozeman,Montana,United States,"12,500",160,"['3d', '3D Printing', '3d Prototyping', 'Autodesk AutoCAD', 'Cad']",CAD & AutoCAD
-53,/freelancers/contentdevelopmentpros,New York,New York,United States,"12,178",15,"['Article Editing', 'Article Rewriting', 'Article Spinning', 'Article Writing', 'Blog Writing']",Content Writing Services
-54,/freelancers/irish-ingenuity,Wappingers Falls,New York,United States,"11,984",28,"['Analytics', 'Budgeting', 'Business Reports', 'Copy & Paste', 'Dashboard Design']",Microsoft Excel Spreadsheets | 10+ Years
-55,/freelancers/kay-derochie,Salem,Oregon,United States,"11,747",32,"['APA Style', 'Articles', 'Chicago Manual of Style', 'Copy Editing', 'Customer Service']",Copy Editing
-56,/freelancers/angie-schleicher,Parma Heights,Ohio,United States,"11,688",15,"['Customer Service', 'Data Entry']","Data Entry, Customer Service, Tech Suppo"
-57,/freelancers/ron-bibbs,Lilburn,Georgia,United States,"11,674",45,"['Accounting', 'Ajax', 'Apache', 'CakePHP', 'ERP']",PHP/MySQL Opensource Webdeveloper
-58,/freelancers/michael-kowalski,Caney,Kansas,United States,"11,440",65,"['.NET', 'Algorithms', 'C', 'C#', 'C++']","Windows Software Development (C++, WPF)"
-59,/freelancers/suzanne-fillmore,Lewiston,Maine,United States,"11,266",10,"['Short Stories', 'Typing']",Suzanne Fillmore
-60,/freelancers/digital-industry,Los Angeles,California,United States,"11,162",53,"['.NET', '.net Core', 'Adobe Photoshop', 'Angular', 'ASP.NET']","C/C++, C#, .NET, React, Angular Project"
-61,/freelancers/rocketgrid,North Arlington,New Jersey,United States,"11,000",70,"['Android Development', 'App Development', 'Computer Engineer', 'Concept Development', 'iOS App Development']",iOS & Android App Development
-62,/freelancers/a-wordsmith,Hendersonville NC,North Carolina,United States,"10,553",30,"['Academic Writing', 'Analysis', 'Civil', 'Civil Society', 'Editing']",Academic Writing
-63,/freelancers/optisol-business,New Castle,Delaware,United States,"10,455",12,"['.NET', 'Android', 'Angular.js', 'ASP.NET', 'Backbone js']",Software Solutions & Services
-64,/freelancers/vu-hoang-cuong-nguyen,San Jose,California,United States,"10,274",30,"['Adobe Photoshop', 'Adobe Premiere Pro', 'CentOS', 'CSS', 'Drupal']","Wordpress, Magento 2, Web Developer"
-65,/freelancers/cynthia-calzone,Belmont,New Hampshire,United States,"9,787",35,"['Book Editor', 'Content Editing', 'Content Writer', 'Copy Editing', 'Editing']",PROOFREADING or EDITING or EDITOR
-66,/freelancers/jessicae7,Washington,District of Columbia,United States,"9,741",70,"['API Development', 'Background Design', 'Communication Skills', 'Information Technology', 'Reports']",Other - ERP & CRM
-67,/freelancers/real-time-seniors,Humble,Texas,United States,"9,705",70,"['Angular', 'Bootsrap', 'CSS', 'CSS3', 'HTML']",Web Front End Development
-68,/freelancers/mohammed-fellak,Tampa,Florida,United States,"9,682",50,"['Angular', 'Django', 'Express.js', 'Flask', 'JavaScript']",Full-Stack JS/Python Web Development
-69,/freelancers/mhaveman,West Olive,Michigan,United States,"8,862",60,"['Academic', 'Academic Papers', 'Academic Writing', 'Articles', 'Content Writing']",Academic Writing
-70,/freelancers/lora-edwards-1,Star,Idaho,United States,"8,817",30,"['Book Writing', 'Fiction Writing', 'Non Fiction Writing', 'Writing']",Fiction writing
-71,/freelancers/shri-vidhya,Overland Park,Kansas,United States,"8,684",5,"['Android Development', 'CSS', 'HTML', 'Java', 'JavaScript']",Android and Web Developer
-72,/freelancers/bplanningcom,Carmel,California,United States,"8,480",5,"['Business Planning', 'Consulting', 'Management', 'Marketing']",Business Planning
-73,/freelancers/madison-emma,Seattle,Washington,United States,"8,444",20,"['Book Writing', 'Content Marketing', 'Content Writing', 'Erotic Dark Fantasy', 'Erotic Dark Fiction']","Fiction Writing ""HOT STEAMY ROMANCE"""
-74,/freelancers/raja-ravichandra-velichety,Ypsilanti,Michigan,United States,"8,400",80,"['Node Js', 'Python', 'React', 'Software Development', 'Twilio']","Software Developer, Architect"
-75,/freelancers/henningsoft,Lithonia,Georgia,United States,"8,315",70,"['Android Development', 'App Development', 'Firebase', 'Ionic', 'iOS App Development']",Mobile iOS/Android App Development
-76,/freelancers/marilynr2,Tampa,Florida,United States,"8,122",50,"['Adobe Photoshop', 'Advertising', 'Copywriting', 'Design', 'Desktop Publishing']",Layout & Desktop Publishing
-77,/freelancers/terry-lee-craddock,Melrose,Florida,United States,"8,080",35,"['CSS', 'Django', 'Full Stack', 'HTML', 'Java']",Professional Web Developer
-78,/freelancers/carolyn-fleming,St. Louis,Missouri,United States,"8,030",40,"['Annual Reports', 'Article Rewriting', 'Article Writing', 'Articles', 'Blog Writing']",Writing
-79,/freelancers/dreamztech,Tempe,Arizona,United States,"8,000",20,"['.NET', 'ASP', 'ASP.NET', 'Benefits', 'C']",Web Development (using ASP.net)
-80,/freelancers/karina-davila,MELROSE PARK,Illinois,United States,"7,894",12,"['Christian Theology', 'Creative', 'Creative Writing', 'e-Books', 'Erotica Writing']",Creative writer
-81,/freelancers/doug-shaw,Las Vegas,Nevada,United States,"7,885",60,"['Advertising', 'Amazon', 'Data Management', 'Facebook', 'Google Ads']",Advertising Management
-82,/freelancers/agb,Silverdale,Washington,United States,"7,817",15,"['Accounting', 'Accounts Payable', 'Accounts Receivable', 'Admin Assistant', 'Administrative Assistant']","Virtual Administration, Assistance"
-83,/freelancers/john-son-1494196,COLUMBIA,Maryland,United States,"7,670",65,"['API', 'Ebay Web Services', 'Excel', 'Google Apps', 'Google Cloud']","Excel, Outlook, Word VBA & Macros"
-84,/freelancers/gabeaydelott,Los Angeles,California,United States,"7,575",70,"['Agile Methodologies', 'Amazon Web Service', 'Core Java', 'Database Development', 'Git']",Senior Java Software Engineer
-85,/freelancers/catnic,Charlotte,North Carolina,United States,"7,353",18,"['cnm', 'Customer Service', 'HTTP', 'Order Entry', 'Sales']",Sales
-86,/freelancers/ammar-qadeer,Scarmento,California,United States,"7,325",35,"['Accounting', 'Android', 'Android Design', 'Android Development', 'App Design']",Accounts Manager
-87,/freelancers/av-design,BELLEAIR BLUFFS,Florida,United States,"7,261",25,"['Acrobat', 'Advertising', 'Brochures', 'Color Correction', 'Corporate']",Layout & Desktop Publishing
+51,/freelancers/lisamariebrennan,Ukiah,California,United States,"13,470",8,"['Comics', 'Design', 'Logo Design', 'Murals', 'Child Book Illustration']",Child Book Illustration
+52,/freelancers/barbara-a-besteni,Miramar,Florida,United States,"12,980",25,"['Blogging', 'Content Writing', 'Copy Editing', 'Copy Editing', 'Creative']",Proofreader/Copy Editor
+53,/freelancers/adam-freund-design-llc,Bozeman,Montana,United States,"12,500",160,"['3d', '3D Printing', '3d Prototyping', 'Autodesk AutoCAD', 'Cad']",CAD & AutoCAD
+54,/freelancers/contentdevelopmentpros,New York,New York,United States,"11,979",15,"['Article Editing', 'Article Rewriting', 'Article Spinning', 'Article Writing', 'Blog Writing']",Content Writing Services
+55,/freelancers/real-time-seniors,Humble,Texas,United States,"11,908",70,"['Angular', 'Bootsrap', 'CSS', 'CSS3', 'HTML']",Web Front End Development
+56,/freelancers/hunter-foley,Louisville,Ohio,United States,"11,855",60,"['CSS', 'HTML', 'JavaScript', 'PHP', 'ReactJS']",React|Vue|Angular|PHP|Node|... Developer
+57,/freelancers/kay-derochie,Salem,Oregon,United States,"11,747",32,"['APA Style', 'Articles', 'Chicago Manual of Style', 'Copy Editing', 'Customer Service']",Copy Editing
+58,/freelancers/angie-schleicher,Parma Heights,Ohio,United States,"11,688",15,"['Customer Service', 'Data Entry']","Data Entry, Customer Service, Tech Suppo"
+59,/freelancers/ron-bibbs,Lilburn,Georgia,United States,"11,674",45,"['Accounting', 'Ajax', 'Apache', 'CakePHP', 'ERP']",PHP/MySQL Opensource Webdeveloper
+60,/freelancers/irish-ingenuity,Wappingers Falls,New York,United States,"11,434",28,"['Analytics', 'Budgeting', 'Business Reports', 'Copy & Paste', 'Dashboard Design']",Microsoft Excel Spreadsheets | 10+ Years
+61,/freelancers/suzanne-fillmore,Lewiston,Maine,United States,"11,416",10,"['Short Stories', 'Typing']",Suzanne Fillmore
+62,/freelancers/digital-industry,Los Angeles,California,United States,"11,162",53,"['.NET', '.net Core', 'Adobe Photoshop', 'Angular', 'ASP.NET']","C/C++, C#, .NET, React, Angular Project"
+63,/freelancers/rocketgrid,North Arlington,New Jersey,United States,"11,000",70,"['Android Development', 'App Development', 'Computer Engineer', 'Concept Development', 'iOS App Development']",iOS & Android App Development
+64,/freelancers/optisol-business,New Castle,Delaware,United States,"10,455",12,"['.NET', 'Android', 'Angular.js', 'ASP.NET', 'Backbone js']",Software Solutions & Services
+65,/freelancers/a-wordsmith,Hendersonville NC,North Carolina,United States,"10,388",30,"['Academic Writing', 'Analysis', 'Civil', 'Editing', 'English Major']",Academic Writing
+66,/freelancers/vu-hoang-cuong-nguyen,San Jose,California,United States,"10,274",30,"['Adobe Photoshop', 'Adobe Premiere Pro', 'CentOS', 'CSS', 'Drupal']","Wordpress, Magento 2, Web Developer"
+67,/freelancers/cynthia-calzone,Belmont,New Hampshire,United States,"10,039",35,"['Book Editor', 'Content Editing', 'Content Writer', 'Copy Editing', 'Editing']",PROOFREADING or EDITING or EDITOR
+68,/freelancers/jessicae7,Washington,District of Columbia,United States,"9,741",70,"['API Development', 'Background Design', 'Communication Skills', 'Information Technology', 'Reports']",Other - ERP & CRM
+69,/freelancers/mohammed-fellak,Tampa,Florida,United States,"9,682",50,"['Angular', 'Django', 'Express.js', 'Flask', 'JavaScript']",Full-Stack JS/Python Web Development
+70,/freelancers/mhaveman,West Olive,Michigan,United States,"8,862",60,"['Academic', 'Academic Papers', 'Academic Writing', 'Articles', 'Content Writing']",Academic Writing
+71,/freelancers/lora-edwards-1,Star,Idaho,United States,"8,817",30,"['Book Writing', 'Fiction Writing', 'Non Fiction Writing', 'Writing']",Fiction writing
+72,/freelancers/shri-vidhya,Overland Park,Kansas,United States,"8,684",5,"['Android Development', 'CSS', 'HTML', 'Java', 'JavaScript']",Android and Web Developer
+73,/freelancers/madison-emma,Seattle,Washington,United States,"8,644",20,"['Book Writing', 'Content Marketing', 'Content Writing', 'Erotic Dark Fantasy', 'Erotic Dark Fiction']",Fiction Writing HOT STEAMY ROMANCE
+74,/freelancers/bplanningcom,Carmel,California,United States,"8,480",5,"['Business Planning', 'Consulting', 'Management', 'Marketing']",Business Planning
+75,/freelancers/raja-ravichandra-velichety,Ypsilanti,Michigan,United States,"8,400",80,"['Node Js', 'Python', 'React', 'Software Development', 'Twilio']","Software Developer, Architect"
+76,/freelancers/henningsoft,Lithonia,Georgia,United States,"8,315",70,"['Android Development', 'App Development', 'Firebase', 'Ionic', 'iOS App Development']",Mobile iOS/Android App Development
+77,/freelancers/phoenixsolutions,Gainesville,Florida,United States,"8,290",40,"['Angular', 'ASP.NET', 'AWS', 'Django', 'Ember.js']",Full Stack Web Development
+78,/freelancers/marilynr2,Tampa,Florida,United States,"8,122",50,"['Adobe Photoshop', 'Advertising', 'Copywriting', 'Design', 'Desktop Publishing']",Layout & Desktop Publishing
+79,/freelancers/agb,Silverdale,Washington,United States,"8,013",15,"['Accounting', 'Accounts Payable', 'Accounts Receivable', 'Admin Assistant', 'Administrative Assistant']","Virtual Administration, Assistance"
+80,/freelancers/karina-davila,MELROSE PARK,Illinois,United States,"8,009",12,"['Christian Theology', 'Creative', 'Creative Writing', 'e-Books', 'Erotica Writing']",Creative writer
+81,/freelancers/dreamztech,Tempe,Arizona,United States,"8,000",20,"['.NET', 'ASP', 'ASP.NET', 'Benefits', 'C']",Web Development (using ASP.net)
+82,/freelancers/terry-lee-craddock,Melrose,Florida,United States,"7,930",35,"['CSS', 'Django', 'Full Stack', 'HTML', 'Java']",Professional Web Developer
+83,/freelancers/doug-shaw,Las Vegas,Nevada,United States,"7,885",60,"['Advertising', 'Amazon', 'Data Management', 'Facebook', 'Google Ads']",Advertising Management
+84,/freelancers/carolyn-fleming,St. Louis,Missouri,United States,"7,870",40,"['Annual Reports', 'Article Rewriting', 'Article Writing', 'Articles', 'Blog Writing']",Writing
+85,/freelancers/john-son-1494196,COLUMBIA,Maryland,United States,"7,670",65,"['API', 'Ebay Web Services', 'Excel', 'Google Apps', 'Google Cloud']","Excel, Outlook, Word VBA & Macros"
+86,/freelancers/catnic,Charlotte,North Carolina,United States,"7,353",18,"['cnm', 'Customer Service', 'HTTP', 'Order Entry', 'Sales']",Sales
+87,/freelancers/ammar-qadeer,Scarmento,California,United States,"7,325",35,"['Accounting', 'Android', 'Android Design', 'Android Development', 'App Design']",Accounts Manager
 88,/freelancers/shane-almgren,Nashville,Tennessee,United States,"7,220",55,"['Adobe Illustrator', 'Adobe Photoshop', 'Advertising', 'Banner', 'Banner Design']",Graphic Design
-89,/freelancers/e-solutions-guru,Woodland Hills,California,United States,"7,040",18,"['Agile Application Development', 'Agile Development', 'Android', 'Android App Development', 'ASP.NET']",Mobile & Web Application Development
-90,/freelancers/thomas-straub,Houston,Texas,United States,"6,917",8,"['Apache', 'C', 'C++', 'CSS', 'Developer']",Programming & Dev
-91,/freelancers/the-quirky-creative,Longmont,Colorado,United States,"6,851",50,"['Article Writing', 'Articles & Press Releases', 'Blogs', 'Brochures', 'Business Writing']",Articles
-92,/freelancers/phoenixsolutions,Gainesville,Florida,United States,"6,850",40,"['Angular', 'ASP.NET', 'AWS', 'Django', 'Ember.js']",Full Stack Web Development
-93,/freelancers/michael-brand,Whitney,Texas,United States,"6,825",80,"['2D Animation', '3D Animation', '3D Design', 'Ad Design', 'Animation']",Commercial Video Production
-94,/freelancers/bluesky-it-solutions,Salt Lake City,Utah,United States,"6,765",45,"['Angular', 'App Development', 'Apple Xcode', 'Cross Platform Development', 'Firebase']",Mobile App Development
-95,/freelancers/amullen,Corning,New York,United States,"6,708",15,"['Articles', 'Basic', 'Content Writing', 'Creative Writing', 'Editing']",Articles & Online Content
-96,/freelancers/matthew-raymer,Bowling Green,Kentucky,United States,"6,588",100,"['Design Specifications', 'Developer', 'Project Management', 'Reports', 'Software Development']","Project Manager, Designer, Developer"
-97,/freelancers/julie-design,Lynnwood,Washington,United States,"6,465",35,"['2D Design', '3D Design', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop']",Best Graphic Design
-98,/freelancers/emmanuel-jasmin,San Diego,California,United States,"6,400",65,"['.NET', 'Angular', 'API Development', 'App Development', 'ASP']",Full stack Software Engineer
-99,/freelancers/thanh-nhan-tran,Keithville,Louisiana,United States,"6,303",22,"['Data Entry', 'Data Management', 'Editing', 'Journalism', 'Writing']",Freelance Journalist/Writer
+89,/freelancers/michael-kowalski,Caney,Kansas,United States,"7,205",65,"['.NET', 'Algorithms', 'C', 'C#', 'C++']","Windows Software Development (C++, WPF)"
+90,/freelancers/thomas-straub,Houston,Texas,United States,"7,092",8,"['Apache', 'C', 'C++', 'CSS', 'Developer']",Programming & Dev
+91,/freelancers/e-solutions-guru,Woodland Hills,California,United States,"7,040",18,"['Agile Application Development', 'Agile Development', 'Android', 'Android App Development', 'ASP.NET']",Mobile & Web Application Development
+92,/freelancers/av-design,BELLEAIR BLUFFS,Florida,United States,"6,911",25,"['Acrobat', 'Advertising', 'Brochures', 'Color Correction', 'Corporate']",Layout & Desktop Publishing
+93,/freelancers/the-quirky-creative,Longmont,Colorado,United States,"6,851",50,"['Article Writing', 'Articles & Press Releases', 'Blogs', 'Brochures', 'Business Writing']",Articles
+94,/freelancers/michael-brand,Whitney,Texas,United States,"6,825",80,"['2D Animation', '3D Animation', '3D Design', 'Ad Design', 'Animation']",Commercial Video Production
+95,/freelancers/bluesky-it-solutions,Salt Lake City,Utah,United States,"6,765",45,"['Angular', 'App Development', 'Apple Xcode', 'Cross Platform Development', 'Firebase']",Mobile App Development
+96,/freelancers/amullen,Corning,New York,United States,"6,666",15,"['Articles', 'Basic', 'Content Writing', 'Creative Writing', 'Editing']",Articles & Online Content
+97,/freelancers/matthew-raymer,Bowling Green,Kentucky,United States,"6,588",100,"['Design Specifications', 'Developer', 'Project Management', 'Reports', 'Software Development']","Project Manager, Designer, Developer"
+98,/freelancers/julie-design,Lynnwood,Washington,United States,"6,430",35,"['2D Design', '3D Design', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop']",Best Graphic Design
+99,/freelancers/emmanuel-jasmin,San Diego,California,United States,"6,400",65,"['.NET', 'Angular', 'API Development', 'App Development', 'ASP']",Full stack Software Engineer
 100,/freelancers/jimmysiegel,Gold River,California,United States,"6,282",50,"['Ads', 'Advertising', 'Articles', 'Blog Writing', 'Copywriting']",Copywriting
-101,/freelancers/dbdesign,Westfield,New Jersey,United States,"6,260",45,"['Ad Design', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Advertising']",Advertisement Design
+101,/freelancers/gabeaydelott,Los Angeles,California,United States,"6,275",70,"['Agile Methodologies', 'Amazon Web Service', 'Core Java', 'Database Development', 'Git']",Senior Java Software Engineer
 102,/freelancers/george-rivas,Dickinson,Texas,United States,"6,255",60,"['Design', 'IT Consulting']",IT/Graphic & Media Design
-103,/freelancers/susan-pompetti,Doylestown,Pennsylvania,United States,"6,192",5,"['Administrative Assistant', 'Management', 'Office Assistant', 'Office Management', 'Skill']",Virtual Assistant
+103,/freelancers/fsd-solutions,Richardson,Texas,United States,"6,150",20,"['Adobe Illustrator', 'Adobe Photoshop', 'App Icons', 'Banner', 'Banner Ads']",Banner Ads & Icons
 104,/freelancers/eric-the-expert,Ann Arbor,Michigan,United States,"6,000",75,"['Java', 'JSP', 'Linux', 'Linux Desktop', 'Programming']",Programming
 105,/freelancers/hector-galarza,Juncos,Puerto Rico,United States,"5,985",30,"['.NET', 'Android', 'API', 'ASP.NET', 'C#']",Best developer you will ever find
 106,/freelancers/jarred-richards,Charlotte,North Carolina,United States,"5,960",60,"['Angular', 'CSS', 'Design', 'Django', 'Full Stack']",Full Stack Web Developer
-107,/freelancers/fsd-solutions,Richardson,Texas,United States,"5,950",20,"['Adobe Illustrator', 'Adobe Photoshop', 'App Icons', 'Banner', 'Banner Ads']",Banner Ads & Icons
-108,/freelancers/john-held,Windermere,Florida,United States,"5,813",55,"['Angular', 'Django', 'Express.js', 'Firebase', 'Framework Design']",Full Stack Development
-109,/freelancers/jenny-o,Morehead,Kentucky,United States,"5,669",10,"['Article Editing', 'Article Writing', 'Content Writing', 'Editing', 'Letter Writing']",Content Writing
-110,/freelancers/andicamp,Treasure Island,Florida,United States,"5,655",20,"['Accounting', 'Bookkeeping', 'Customer Relations', 'Customer Service', 'Data Entry']","Administrative,Transcription, Data Entry"
-111,/freelancers/harathi-surya-patchipala,San Jose,California,United States,"5,640",5,"['Algorithms', 'C Language', 'Cnn', 'Engineering', 'Learning']",Python Machine Learning Engineer
-112,/freelancers/sinead-marie,Richfield Springs,New York,United States,"5,621",10,"['Article Writing', 'Branding', 'Legal Research', 'Marketing', 'Newsletters']",Best SEO and Article writer!
-113,/freelancers/katheryn-labosky,Nesquehoning,Pennsylvania,United States,"5,491",25,"['Grant Writing', 'Legal Advice', 'Legal Documents', 'Personal Assistant', 'Presentations']",high end writing for business /personal
-114,/freelancers/usha-s-koshy-phd-jd,Euless,Texas,United States,"5,450",150,['Patent Law'],PATENT PROSECUTION
-115,/freelancers/storm-anderson,Chicago,Illinois,United States,"5,130",80,"['Application Development', 'Consultant', 'Flow', 'Governance', 'Microsoft Excel']","O365 - Excel Reporting, PowerApps, SP"
-116,/freelancers/mrbinks,Windermere,Florida,United States,"4,850",35,"['.NET', 'Access', 'Basic', 'Crystal Reports', 'Customer Satisfaction']",Programming
-117,/freelancers/laurie-likes-to-write-ma,Branford,Connecticut,United States,"4,790",18,"['Advertising', 'Articles', 'Book Writing', 'Chemical Engineering', 'Corporate']",Articles
-118,/freelancers/yohan-torres,Poinciana,Florida,United States,"4,789",55,"['Django', 'Express.js', 'Next.js', 'ReactJS', 'Redux']",Full Stack Developer
-119,/freelancers/gracem-1280066,Grove,Oklahoma,United States,"4,721",25,"['Book Editing', 'Book Formatting', 'Copy Editing', 'Cover Design', 'CreateSpace']","Editing, Proofreading, Formatting"
-120,/freelancers/cupideros,Cincinnati,Ohio,United States,"4,475",60,"['Fiction', 'Fiction Writing', 'Ghostwriter', 'Ghostwriting Services', 'Novel Writing']","Ghostwriting, with over six years."
-121,/freelancers/sarah-gerulski,Bentonville,Arkansas,United States,"4,465",5,"['Editing', 'Ghostwriting', 'Proofreading', 'Short Stories', 'Writing']",Freelance Writing
-122,/freelancers/cv19-phylogenomics,Anchorage,Alaska,United States,"4,373",100,"['Analytics', 'Biotechnology', 'Experimental Design', 'Modeling', 'Science']",Virus Phylogenetics (SME)
-123,/freelancers/lindsey-e,Saint Charles,Missouri,United States,"4,274",40,"['Creative Writing', 'English Language', 'Meta Descriptions', 'Product Description', 'Product Titles']",Product Description Specialist
-124,/freelancers/nathan-gunter,Oklahoma City,Oklahoma,United States,"4,258",30,"['Editing', 'Fiction', 'Grammar', 'Nonfiction', 'Pitching']","Professional, Full-Time Editor"
-125,/freelancers/logogenie,Boston,Massachusetts,United States,"4,195",15,"['Banner', 'Banner Ads Design', 'Banner Design', 'CSS', 'CSS3']",Banner Ads & Icons
-126,/freelancers/nextgen-invent-corporation,Syosset,New York,United States,"4,168",50,"['Ai', 'Algorithms', 'Artificial Intelligence', 'Attribution Modeling', 'Cognos']",Artificial Intelligence / ML / NLP
-127,/freelancers/jktran,Houston,Texas,United States,"4,090",25,"['Analytics', 'Compliance Consulting', 'Graphic Design', 'Microsoft', 'Microsoft Word']",Proposal Manager
-128,/freelancers/gabriel-mendoza,Stillwater,Oklahoma,United States,"4,006",10,"['Access Programming', 'Excel', 'VBA', 'Mathematics', 'Vba Programming']",Excel VBA DashBoard Programming
-129,/freelancers/meghan-roche,Pittsburgh,Pennsylvania,United States,"3,939",5,"['Audio Services', 'Microsoft PowerPoint']",Audio Freelancer
-130,/freelancers/making-it-happen-874332,Escondido,California,United States,"3,806",5,"['Accounting', 'Accounting Software', 'Appointment Setting', 'Business Development', 'Cold Calling']",Field Sales
-131,/freelancers/veronica-dolginko,San Francisco,California,United States,"3,800",30,"['Fiction Writing', 'Ghost Article Writer', 'Ghostwriting', 'Ghostwriting Services', 'Journalism']",Ghostwriter and Content Creator for Hire
-132,/freelancers/impressivedesign,Ventura,California,United States,"3,786",15,"['Acrobat', 'Adobe Acrobat', 'Adobe Illustrator', 'Adobe Photoshop', 'Advertising']",Book Printing and Design
-133,/freelancers/smart-business-methods,Destin,Florida,United States,"3,712",89,"['Access', 'Act', 'Act!', 'Aftersales', 'Business Development']",Business Development
-134,/freelancers/e-lee-caleca,Hendersonville,Tennessee,United States,"3,653",47,"['Clothing', 'Editing', 'Fashion Design', 'Food', 'Gardening']",Nonfiction: 40+ books ghostwritten
-135,/freelancers/kevin-champlin,Oglesby,Illinois,United States,"3,555",65,"['Adobe', 'Adobe Photoshop', 'CSS', 'Design', 'Graphic Design']",Web Design
-136,/freelancers/terryarthur,Jacksonville,Florida,United States,"3,521",40,"['Content Strategy', 'Creative Design', 'CSS3', 'Email', 'HTML']",One on One Personal Customized Training
-137,/freelancers/bruce-anderson,Tuckerton,New Jersey,United States,"3,513",12,"['Book Editing', 'Copy Editing', 'Copy Editing', 'Editing & Proofreading', 'English Grammar']",Copyediting
-138,/freelancers/paradoxical,Granger,Indiana,United States,"3,486",30,"['Academic Writing', 'Citation', 'Data Collection', 'Microsoft', 'Research']",Academic & Non-Fiction Writing
-139,/freelancers/runsie,St. louis,Missouri,United States,"3,478",20,"['Accounting', 'Admin Assistant', 'Administrative Assistant', 'Article Writing', 'Business Writing']",Virtual and Administrative Asisstant
-140,/freelancers/deal-closer-972-325-8967,Tyler,Texas,United States,"3,448",15,"['Client Development', 'Cold Calling', 'Management', 'Sales', 'Telemarketing']",Field Sales
-141,/freelancers/jonathan-ryan-moseley,Hamilton Township,New Jersey,United States,"3,400",70,"['Angular', 'AngularJS', 'ASP', 'ASP.NET', 'C#']",Web Development
-142,/freelancers/laitkor-infosolutions-pvt-ltd,Sunnyvale,California,United States,"3,397",12,"['CakePHP', 'CMS (Content Management System)', 'CodeIgniter', 'CSS', 'jQuery']",PHP Web Development
-143,/freelancers/angela-bronson,Harwinton,Connecticut,United States,"3,375",40,"['Adobe Photoshop', 'Bootstrap', 'Business Card Design', 'CSS3', 'Graphic Design']",Web Developer and Designer
-144,/freelancers/andrew-armstrong-1812410,Lexington,Kentucky,United States,"3,360",25,"['Ajax', 'Bootstrap', 'CodeIgniter', 'CSS', 'Drupal']",Premium Web Development Team
-145,/freelancers/liedtke-design,Costa Mesa,California,United States,"3,308",25,"['Biographies', 'Book Cover Design', 'Cover Illustration', 'Ebook', 'Fantasy']",Book Cover Design
-146,/freelancers/harris-janoo,Baltimore,Maryland,United States,"3,302",8,"['2D Animation', '2D Design', '3D Design', 'Animation', 'App Design']","2d animation, illustration, deisgn,web"
-147,/freelancers/deborah-thomas,Sweetwater,Tennessee,United States,"3,293",15,"['Accounting', 'Accounting Management', 'Analysis', 'Budgeting', 'Cost Accounting']",Accountant/Bookeeper
-148,/freelancers/alexis-leigh,San Luis Obispo,California,United States,"3,229",10,"['Article Writing', 'Blog Writing', 'Search Engine Optimization (SEO)', 'SEO']",SEO Articles and Blogging
-149,/freelancers/christine-joy,Greenville,South Carolina,United States,"3,150",50,"['Art', 'Art Design', 'Brand Identity', 'Brand Identity Design', 'Design']",Graphic Designer
-150,/freelancers/steven-terry,Fresno,California,United States,"3,125",30,"['Amazon', 'App Development', 'BuddyPress', 'Dart', 'Design']",Web Application Development
-151,/freelancers/tom-kerr,Alexander,North Carolina,United States,"3,075",20,"['Ad Campaigns', 'Media Strategy', 'Public Relations (PR)', 'Articles', 'Blogs']",Articles & Press Releases
-152,/freelancers/rehan-qadri,Alpharetta,Georgia,United States,"3,010",50,"['Arts & Crafts', 'Back End Development', 'CakePHP', 'Crafting', 'Information Technology']",LampStack(PHP/Laravel/CakePHP/Yii)
-153,/freelancers/dave-cohn,Sylvania,Ohio,United States,"3,005",125,"['Coding', 'EasyLanguage', 'Electrical Engineering', 'Statistics', 'Strategy Development']",TradeStation Certified EasyLanguage Spec
-154,/freelancers/roscoej,New York,New York,United States,"3,000",75,"['Analytics', 'Android Development', 'Augmented Reality (AR)', 'AWS', 'Bluetooth Low Energy']",Native iOS & Android App Development
-155,/freelancers/andriy-taran,Poughkeepsie,New York,United States,"3,000",60,"['Analytics', 'Angular', 'Data Management', 'Environmental', 'JavaScript']",Senior Web Developer
-156,/freelancers/caes,Long Beach,California,United States,"2,994",5,"['2D Design', '3D Design', 'Aerospace Engineering', 'Animation', 'Biotechnology']",Engineering CAD and CAE
-157,/freelancers/textfixers,Bangor,Maine,United States,"2,974",75,"['Book Writing', 'Business Letters', 'Business Writing', 'e-Books', 'Editing']",Ghost Writing & Books
-158,/freelancers/kelsey-j,Wheat Ridge,Colorado,United States,"2,965",50,"['Amazon', 'Amazon Kindle', 'Creative Writing', 'Erotica Writing', 'Fiction Writing']",Erotic Romance Ghost Writer
-159,/freelancers/agata-kaczmarek,Bartlett,Illinois,United States,"2,935",30,"['Articles', 'Blogging', 'Book Writing', 'Contemporary Fiction', 'Fiction Writing']",Ghostwriting
-160,/freelancers/alia-3031591,Spokane,Washington,United States,"2,920",8,"['Amazon Kindle', 'Blogs', 'Books', 'Branding', 'eBooks']",Ghostwrite E book for Kindle
-161,/freelancers/jlsgillette-cpbd-crbim,Seymour,Tennessee,United States,"2,912",65,"['3D Design', 'Architectural Design', 'Building Design', 'Color Renderings', 'Commercial Design']",Prof. Commercial & Residential Design
-162,/freelancers/full-stack-web-mobile-expert-guru,Huntsville,Alabama,United States,"2,897",60,"['Android App Development', 'Android Development', 'Angular', 'App Development', 'Balsamiq']",Full Stack Mobile/Web Design & Dev Guru
-163,/freelancers/interstellar-coterie,Simpsonville,South Carolina,United States,"2,842",70,"['Android App', 'Android App Development', 'App Development', 'Apple Cocoa Touch', 'Cross Platform Development']",Mobile App Development
-164,/freelancers/tharrison,Grand Haven,Michigan,United States,"2,818",30,"['Design', 'Graphic Design', 'Illustration', 'Architectural Illustration']",Architectural Illustration
-165,/freelancers/ahmedelmaraezy,Davie,Florida,United States,"2,814",25,"['Analytics', 'Anova', 'Biostatistics', 'Data Analysis', 'Data Management']",Biostatistics and Data Analysis
-166,/freelancers/jenifer-davidson,New Orleans,Louisiana,United States,"2,795",25,"['Book Writing', 'Content Writer', 'eBooks', 'English Language', 'Erotica Writing']",Erotic Romance Writer
-167,/freelancers/pamela-mullins,Mooresville,North Carolina,United States,"2,770",15,"['Accounting', 'Administrative Assistant', 'Appointment Setting', 'Blog Writing', 'Email']",Virtual Assistant
-168,/freelancers/m-peter,Birmingham,Alabama,United States,"2,725",30,"['Analytics', 'Business Intelligence', 'Business Intelligence Tools', 'Computer Engineer', 'Data Analysis']",Data Analysis and Visualization - BI
-169,/freelancers/don-web-developer,Miami,Florida,United States,"2,722",25,"['Business Services', 'Business Web Design', 'Creative Design', 'Custom Web Development', 'Custom Website Development']",New Website Creation
-170,/freelancers/susana-rubio,Santa Barbara,California,United States,"2,715",5,"['Artificial Intelligence', 'Controller', 'Data Management', 'Google Tag Manager', 'Neural Network']",AI Data-set Curation Services
-171,/freelancers/julywe,St Pete Beach,Florida,United States,"2,710",15,"['Adobe Illustrator', 'Art Direction', 'Design', 'Drawing', 'Editing']",Landscape Painting
-172,/freelancers/heguang-zhou,San Diego,California,United States,"2,660",70,"['Amazon', 'Android', 'Android Development', 'C#', 'Firebase']",Expert Mobile App Developer(Swift | RN)
-173,/freelancers/harding-it-consulting,Meridian,Idaho,United States,"2,623",20,"['Administrative Assistant', 'Database Development', 'Formula', 'Mac OS', 'Macintosh']",Microsoft Windows and Office 365 Support
-174,/freelancers/yewon-bock,San Ramon,California,United States,"2,612",8,"['English Language', 'Korean Translation', 'Localization', 'Transcription', 'Translation']",Korean Translator/Transcription
-175,/freelancers/design-geek,Granton,Wisconsin,United States,"2,611",15,"['Adobe Illustrator', 'Adobe Photoshop', 'Brand Identity', 'Brand Logo', 'Corporate Brand Identity']",Logo Design
-176,/freelancers/getmobileappdeveloper,Menlo Park,California,United States,"2,585",15,"['.NET', 'Android', 'Android API', 'Android Design', 'Android SDK']",Hybrid & Native Mobile app development
-177,/freelancers/lauren-lamb,Chesterfield,Virginia,United States,"2,576",15,"['Artist', 'Character Design', 'Design', 'Illustration', 'Photoshop']",Illustrator
-178,/freelancers/sergiu-tofanel,Waco,Texas,United States,"2,555",35,"['3D Design', '3D Printing', 'C', 'C++', 'CAD And AutoCAD']",electrical and mechanical engineering
-179,/freelancers/calvin-tran-1,Grand Rapids,Michigan,United States,"2,550",50,"['Angular', 'Bootstrap', 'CSS', 'Haskell', 'HTML']",Full-Stack Developer
+107,/freelancers/susan-pompetti,Doylestown,Pennsylvania,United States,"5,940",5,"['Administrative Assistant', 'Management', 'Office Assistant', 'Office Management', 'Skill']",Virtual Assistant
+108,/freelancers/thanh-nhan-tran,Keithville,Louisiana,United States,"5,910",22,"['Data Entry', 'Data Management', 'Editing', 'Journalism', 'Writing']",Freelance Journalist/Writer
+109,/freelancers/dbdesign,Westfield,New Jersey,United States,"5,870",45,"['Ad Design', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Photoshop', 'Advertising']",Advertisement Design
+110,/freelancers/john-held,Windermere,Florida,United States,"5,813",55,"['Angular', 'Django', 'Express.js', 'Firebase', 'Framework Design']",Full Stack Development
+111,/freelancers/jenny-o,Morehead,Kentucky,United States,"5,669",10,"['Article Editing', 'Article Writing', 'Content Writing', 'Editing', 'Letter Writing']",Content Writing
+112,/freelancers/andicamp,Treasure Island,Florida,United States,"5,655",20,"['Accounting', 'Bookkeeping', 'Customer Relations', 'Customer Service', 'Data Entry']","Administrative,Transcription, Data Entry"
+113,/freelancers/harathi-surya-patchipala,San Jose,California,United States,"5,640",5,"['Algorithms', 'C Language', 'Cnn', 'Engineering', 'Learning']",Python Machine Learning Engineer
+114,/freelancers/sinead-marie,Richfield Springs,New York,United States,"5,621",10,"['Article Writing', 'Branding', 'Legal Research', 'Marketing', 'Newsletters']",Best SEO and Article writer!
+115,/freelancers/katheryn-labosky,Nesquehoning,Pennsylvania,United States,"5,491",25,"['Grant Writing', 'Legal Advice', 'Legal Documents', 'Personal Assistant', 'Presentations']",high end writing for business /personal
+116,/freelancers/usha-s-koshy-phd-jd,Euless,Texas,United States,"5,450",150,['Patent Law'],PATENT PROSECUTION
+117,/freelancers/storm-anderson,Chicago,Illinois,United States,"5,130",80,"['Application Development', 'Consultant', 'Flow', 'Governance', 'Microsoft Excel']","O365 - Excel Reporting, PowerApps, SP"
+118,/freelancers/laurie-likes-to-write-ma,Branford,Connecticut,United States,"4,940",18,"['Advertising', 'Articles', 'Book Writing', 'Chemical Engineering', 'Corporate']",Articles
+119,/freelancers/mrbinks,Windermere,Florida,United States,"4,850",35,"['.NET', 'Access', 'Basic', 'Crystal Reports', 'Customer Satisfaction']",Programming
+120,/freelancers/yohan-torres,Poinciana,Florida,United States,"4,789",55,"['Django', 'Express.js', 'Next.js', 'ReactJS', 'Redux']",Full Stack Developer
+121,/freelancers/gracem-1280066,Grove,Oklahoma,United States,"4,721",25,"['Book Editing', 'Book Formatting', 'Copy Editing', 'Cover Design', 'CreateSpace']","Editing, Proofreading, Formatting"
+122,/freelancers/edwin-rosembert,New Castle,Delaware,United States,"4,550",70,"['Angular', 'App Development', 'Engineering', 'Framework Design', 'JavaScript']",Angular/RoR Developer
+123,/freelancers/cupideros,Cincinnati,Ohio,United States,"4,475",60,"['Fiction', 'Fiction Writing', 'Ghostwriter', 'Ghostwriting Services', 'Novel Writing']","Ghostwriting, with over six years."
+124,/freelancers/sarah-gerulski,Bentonville,Arkansas,United States,"4,465",5,"['Editing', 'Ghostwriting', 'Proofreading', 'Short Stories', 'Writing']",Freelance Writing
+125,/freelancers/cv19-phylogenomics,Anchorage,Alaska,United States,"4,373",100,"['Analytics', 'Biotechnology', 'Experimental Design', 'Modeling', 'Science']",Virus Phylogenetics (SME)
+126,/freelancers/lindsey-e,Saint Charles,Missouri,United States,"4,301",40,"['Creative Writing', 'English Language', 'Meta Descriptions', 'Product Description', 'Product Titles']",Product Description Specialist
+127,/freelancers/nathan-gunter,Oklahoma City,Oklahoma,United States,"4,258",30,"['Editing', 'Fiction', 'Grammar', 'Nonfiction', 'Pitching']","Professional, Full-Time Editor"
+128,/freelancers/logogenie,Boston,Massachusetts,United States,"4,195",15,"['Banner', 'Banner Ads Design', 'Banner Design', 'CSS', 'CSS3']",Banner Ads & Icons
+129,/freelancers/nextgen-invent-corporation,Syosset,New York,United States,"4,168",50,"['Ai', 'Algorithms', 'Artificial Intelligence', 'Attribution Modeling', 'Cognos']",Artificial Intelligence / ML / NLP
+130,/freelancers/jktran,Houston,Texas,United States,"4,160",25,"['Analytics', 'Compliance Consulting', 'Graphic Design', 'Microsoft', 'Microsoft Word']",Proposal Manager
+131,/freelancers/gabriel-mendoza,Stillwater,Oklahoma,United States,"4,006",10,"['Access Programming', 'Excel', 'VBA', 'Mathematics', 'Vba Programming']",Excel VBA DashBoard Programming
+132,/freelancers/meghan-roche,Pittsburgh,Pennsylvania,United States,"3,939",5,"['Audio Services', 'Microsoft PowerPoint']",Audio Freelancer
+133,/freelancers/bruce-anderson,Tuckerton,New Jersey,United States,"3,913",12,"['Book Editing', 'Copy Editing', 'Copy Editing', 'Editing & Proofreading', 'English Grammar']",Copyediting
+134,/freelancers/andriy-taran,Poughkeepsie,New York,United States,"3,900",60,"['Analytics', 'Angular', 'Data Management', 'Environmental', 'JavaScript']",Senior Web Developer
+135,/freelancers/veronica-dolginko,San Francisco,California,United States,"3,870",30,"['Fiction Writing', 'Ghost Article Writer', 'Ghostwriting', 'Ghostwriting Services', 'Journalism']",Ghostwriter and Content Creator for Hire
+136,/freelancers/making-it-happen-874332,Escondido,California,United States,"3,806",5,"['Accounting', 'Accounting Software', 'Appointment Setting', 'Business Development', 'Cold Calling']",Field Sales
+137,/freelancers/impressivedesign,Ventura,California,United States,"3,786",15,"['Acrobat', 'Adobe Acrobat', 'Adobe Illustrator', 'Adobe Photoshop', 'Advertising']",Book Printing and Design
+138,/freelancers/smart-business-methods,Destin,Florida,United States,"3,712",89,"['Access', 'Act', 'Act!', 'Aftersales', 'Business Development']",Business Development
+139,/freelancers/e-lee-caleca,Hendersonville,Tennessee,United States,"3,653",47,"['Clothing', 'Editing', 'Fashion Design', 'Food', 'Gardening']",Nonfiction: 40+ books ghostwritten
+140,/freelancers/kevin-champlin,Oglesby,Illinois,United States,"3,555",65,"['Adobe', 'Adobe Photoshop', 'CSS', 'Design', 'Graphic Design']",Web Design
+141,/freelancers/terryarthur,Jacksonville,Florida,United States,"3,521",40,"['Content Strategy', 'Creative Design', 'CSS3', 'Email', 'HTML']",One on One Personal Customized Training
+142,/freelancers/paradoxical,Granger,Indiana,United States,"3,486",30,"['Academic Writing', 'Citation', 'Data Collection', 'Microsoft', 'Research']",Academic & Non-Fiction Writing
+143,/freelancers/runsie,St. louis,Missouri,United States,"3,478",20,"['Accounting', 'Admin Assistant', 'Administrative Assistant', 'Article Writing', 'Business Writing']",Virtual and Administrative Asisstant
+144,/freelancers/deal-closer-972-325-8967,Tyler,Texas,United States,"3,448",15,"['Client Development', 'Cold Calling', 'Management', 'Sales', 'Telemarketing']",Field Sales
+145,/freelancers/jonathan-ryan-moseley,Hamilton Township,New Jersey,United States,"3,400",70,"['Angular', 'AngularJS', 'ASP', 'ASP.NET', 'C#']",Web Development
+146,/freelancers/laitkor-infosolutions-pvt-ltd,Sunnyvale,California,United States,"3,397",12,"['CakePHP', 'CMS (Content Management System)', 'CodeIgniter', 'CSS', 'jQuery']",PHP Web Development
+147,/freelancers/angela-bronson,Harwinton,Connecticut,United States,"3,375",40,"['Adobe Photoshop', 'Bootstrap', 'Business Card Design', 'CSS3', 'Graphic Design']",Web Developer and Designer
+148,/freelancers/andrew-armstrong-1812410,Lexington,Kentucky,United States,"3,360",25,"['Ajax', 'Bootstrap', 'CodeIgniter', 'CSS', 'Drupal']",Premium Web Development Team
+149,/freelancers/alexis-leigh,San Luis Obispo,California,United States,"3,329",10,"['Article Writing', 'Blog Writing', 'Search Engine Optimization (SEO)', 'SEO']",SEO Articles and Blogging
+150,/freelancers/harris-janoo,Baltimore,Maryland,United States,"3,302",8,"['2D Animation', '2D Design', '3D Design', 'Animation', 'App Design']","2d animation, illustration, deisgn,web"
+151,/freelancers/deborah-thomas,Sweetwater,Tennessee,United States,"3,293",15,"['Accounting', 'Accounting Management', 'Analysis', 'Budgeting', 'Cost Accounting']",Accountant/Bookeeper
+152,/freelancers/christine-joy,Greenville,South Carolina,United States,"3,150",50,"['Art', 'Art Design', 'Brand Identity', 'Brand Identity Design', 'Design']",Graphic Designer
+153,/freelancers/steven-terry,Fresno,California,United States,"3,125",30,"['Amazon', 'App Development', 'BuddyPress', 'Dart', 'Design']",Web Application Development
+154,/freelancers/tom-kerr,Alexander,North Carolina,United States,"3,075",20,"['Ad Campaigns', 'Media Strategy', 'Public Relations (PR)', 'Articles', 'Blogs']",Articles & Press Releases
+155,/freelancers/rehan-qadri,Alpharetta,Georgia,United States,"3,010",50,"['Arts & Crafts', 'Back End Development', 'CakePHP', 'Crafting', 'Information Technology']",LampStack(PHP/Laravel/CakePHP/Yii)
+156,/freelancers/dave-cohn,Sylvania,Ohio,United States,"3,005",125,"['Coding', 'EasyLanguage', 'Electrical Engineering', 'Statistics', 'Strategy Development']",TradeStation Certified EasyLanguage Spec
+157,/freelancers/roscoej,New York,New York,United States,"3,000",75,"['Analytics', 'Android Development', 'Augmented Reality (AR)', 'AWS', 'Bluetooth Low Energy']",Native iOS & Android App Development
+158,/freelancers/caes,Long Beach,California,United States,"2,994",5,"['2D Design', '3D Design', 'Aerospace Engineering', 'Animation', 'Biotechnology']",Engineering CAD and CAE
+159,/freelancers/textfixers,Bangor,Maine,United States,"2,974",75,"['Book Writing', 'Business Letters', 'Business Writing', 'e-Books', 'Editing']",Ghost Writing & Books
+160,/freelancers/kelsey-j,Wheat Ridge,Colorado,United States,"2,965",50,"['Amazon', 'Amazon Kindle', 'Creative Writing', 'Erotica Writing', 'Fiction Writing']",Erotic Romance Ghost Writer
+161,/freelancers/liedtke-design,Costa Mesa,California,United States,"2,959",25,"['Biographies', 'Book Cover Design', 'Cover Illustration', 'Ebook', 'Fantasy']",Book Cover Design
+162,/freelancers/agata-kaczmarek,Bartlett,Illinois,United States,"2,935",30,"['Articles', 'Blogging', 'Book Writing', 'Contemporary Fiction', 'Fiction Writing']",Ghostwriting
+163,/freelancers/alia-3031591,Spokane,Washington,United States,"2,920",8,"['Amazon Kindle', 'Blogs', 'Books', 'Branding', 'eBooks']",Ghostwrite E book for Kindle
+164,/freelancers/jlsgillette-cpbd-crbim,Seymour,Tennessee,United States,"2,912",65,"['3D Design', 'Architectural Design', 'Building Design', 'Color Renderings', 'Commercial Design']",Prof. Commercial & Residential Design
+165,/freelancers/full-stack-web-mobile-expert-guru,Huntsville,Alabama,United States,"2,897",60,"['Android App Development', 'Android Development', 'Angular', 'App Development', 'Balsamiq']",Full Stack Mobile/Web Design & Dev Guru
+166,/freelancers/interstellar-coterie,Simpsonville,South Carolina,United States,"2,842",70,"['Android App', 'Android App Development', 'App Development', 'Apple Cocoa Touch', 'Cross Platform Development']",Mobile App Development
+167,/freelancers/jenifer-davidson,New Orleans,Louisiana,United States,"2,826",25,"['Book Writing', 'Content Writer', 'eBooks', 'English Language', 'Erotica Writing']",Erotic Romance Writer
+168,/freelancers/tharrison,Grand Haven,Michigan,United States,"2,818",30,"['Design', 'Graphic Design', 'Illustration', 'Architectural Illustration']",Architectural Illustration
+169,/freelancers/ahmedelmaraezy,Davie,Florida,United States,"2,814",25,"['Analytics', 'Anova', 'Biostatistics', 'Data Analysis', 'Data Management']",Biostatistics and Data Analysis
+170,/freelancers/geekforgigs,New York,New York,United States,"2,796",15,"['Alexa', 'Amazon Alexa Skill', 'Arduino', 'Artificial Neural Networks', 'Business Intelligence']",Machine Learning and AI
+171,/freelancers/m-peter,Birmingham,Alabama,United States,"2,725",30,"['Analytics', 'Business Intelligence', 'Business Intelligence Tools', 'Computer Engineer', 'Data Analysis']",Data Analysis and Visualization - BI
+172,/freelancers/don-web-developer,Miami,Florida,United States,"2,722",25,"['Business Services', 'Business Web Design', 'Creative Design', 'Custom Web Development', 'Custom Website Development']",New Website Creation
+173,/freelancers/susana-rubio,Santa Barbara,California,United States,"2,715",5,"['Artificial Intelligence', 'Controller', 'Data Management', 'Google Tag Manager', 'Neural Network']",AI Data-set Curation Services
+174,/freelancers/julywe,St Pete Beach,Florida,United States,"2,710",15,"['Adobe Illustrator', 'Art Direction', 'Design', 'Drawing', 'Editing']",Landscape Painting
+175,/freelancers/heguang-zhou,San Diego,California,United States,"2,660",70,"['Amazon', 'Android', 'Android Development', 'C#', 'Firebase']",Expert Mobile App Developer(Swift | RN)
+176,/freelancers/pamela-mullins,Mooresville,North Carolina,United States,"2,650",15,"['Accounting', 'Administrative Assistant', 'Appointment Setting', 'Blog Writing', 'Email']",Virtual Assistant
+177,/freelancers/harding-it-consulting,Meridian,Idaho,United States,"2,623",20,"['Administrative Assistant', 'Database Development', 'Formula', 'Mac OS', 'Macintosh']",Microsoft Windows and Office 365 Support
+178,/freelancers/yewon-bock,San Ramon,California,United States,"2,612",8,"['English Language', 'Korean Translation', 'Localization', 'Transcription', 'Translation']",Korean Translator/Transcription
+179,/freelancers/design-geek,Granton,Wisconsin,United States,"2,611",15,"['Adobe Illustrator', 'Adobe Photoshop', 'Brand Identity', 'Brand Logo', 'Corporate Brand Identity']",Logo Design
