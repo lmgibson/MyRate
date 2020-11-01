@@ -6,6 +6,7 @@ import streamlit as st  # creating web-app
 import pandas as pd  # managing data
 import numpy as np  # managing data for model
 import os
+from datetime import date
 
 ################################################
 
@@ -27,10 +28,12 @@ def string_to_list(series):
 
 
 def rate_by_skill(data):
+    today = date.today()
+    data = data[(data['date_accessed'] == str(today))]
     exploded_df = data.explode('skills_list')
     results = exploded_df.groupby(['skills_list'])[
         'hourly_rate'].agg(['mean', 'count'])
-    return results.sort_values(by=['count'], ascending=False)
+    return results.sort_values(by=['count', 'mean'], ascending=False)
 
 
 # Cleaning df
@@ -38,8 +41,19 @@ df['skills_list'] = string_to_list(df['skills_list'])
 
 
 # Building web app
-st.title("Freelance Hourly Rate Data")
+st.title("Freelance Hourly Rate Trends")
 st.markdown(
     "Welcome! This app provides data and trends of freelancer hourly rates.")
+st.markdown(
+    "## Trends in overall average hourly rate"
+)
 st.write(df.groupby(['date_accessed'])['hourly_rate'].mean())
+
+col1, col2 = st.beta_columns(2)
+col1.markdown("## Most popular skills")
+col1.write(rate_by_skill(df)['count'].head(5))
+col2.markdown("## Least popular skills")
+col2.write(rate_by_skill(df)['count'].tail(5))
+
+st.markdown("## Average hourly rate by skill category")
 st.write(rate_by_skill(df))
