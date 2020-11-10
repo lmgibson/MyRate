@@ -1,5 +1,6 @@
 # Ignore the environment
 conda-env
+conda-test
 
 # Ignore my own resource links and notes
 notes_ignore
@@ -48,3 +49,6 @@ pull_and_merge_data
 
 # Ignoring data
 **/data
+
+# Notebooks
+notebooks 
