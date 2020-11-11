@@ -51,4 +51,8 @@ pull_and_merge_data
 **/data
 
 # Notebooks
-notebooks 
+notebooks
+
+# Docker
+Dockerfile
+.docker*
