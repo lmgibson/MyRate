@@ -6,7 +6,7 @@ import os
 from datetime import date
 
 
-def loadDatafromAirtable():
+def loadDataFromAirtable():
     api_key = os.environ['AIRTABLE_API_KEY']
     base_key = os.environ['AIRTABLE_FREELANCE_BASE_KEY']
     table_name = 'freelancers'
@@ -26,21 +26,16 @@ def convertSkillsStringToList():
 
 
 def filterPandasDataToMostRecentDate():
-    today = date.today()
-    print("TODAY IS:")
-    print(today)
-    return pandasData[(pandasData['date_accessed'] == str(today))]
+    mostRecentDate = pandasData.date_accessed.max()
+    return pandasData.loc[pandasData['date_accessed'] == mostRecentDate]
 
 
-def calculateHourlyRatebySkill():
+def calculateHourlyRateBySkill():
     pandasData = filterPandasDataToMostRecentDate()
     pandasData['skills_list'] = convertSkillsStringToList()
-    print(pandasData)
     explodedPandasData = pandasData.explode('skills_list')
-    print(explodedPandasData)
     results = explodedPandasData.groupby(['skills_list'])[
         'hourly_rate'].agg(['mean', 'count'])
-    print(results)
     return results.sort_values(by=['count', 'mean'], ascending=False)
 
 
@@ -50,10 +45,10 @@ st.markdown(
 st.markdown(
     "## Trends in overall average hourly rate"
 )
-pandasData = loadDatafromAirtable()
+pandasData = loadDataFromAirtable()
 st.write(calculateOverallHourlyRate())
 
-hourlyRatesBySkill = calculateHourlyRatebySkill()
+hourlyRatesBySkill = calculateHourlyRateBySkill()
 col1, col2 = st.beta_columns(2)
 col1.markdown("## Most popular skills")
 col1.write(hourlyRatesBySkill.head(5))
