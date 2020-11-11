@@ -1,4 +1,4 @@
 beautifulsoup4==4.9.3
 pandas
-airtable-python-wrapper==0.15.1
-streamlit==0.70.0
+airtable-python-wrapper
+streamlit
