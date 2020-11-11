@@ -1,6 +1,6 @@
 # Ignore the environment
 conda-env
-conda-test
+venv
 
 # Ignore my own resource links and notes
 notes_ignore
