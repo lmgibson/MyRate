@@ -27,6 +27,8 @@ def convertSkillsStringToList():
 
 def filterPandasDataToMostRecentDate():
     today = date.today()
+    print("TODAY IS:")
+    print(today)
     return pandasData[(pandasData['date_accessed'] == str(today))]
 
 
