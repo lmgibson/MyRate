@@ -33,9 +33,12 @@ def filterPandasDataToMostRecentDate():
 def calculateHourlyRatebySkill():
     pandasData = filterPandasDataToMostRecentDate()
     pandasData['skills_list'] = convertSkillsStringToList()
+    print(pandasData)
     explodedPandasData = pandasData.explode('skills_list')
+    print(explodedPandasData)
     results = explodedPandasData.groupby(['skills_list'])[
         'hourly_rate'].agg(['mean', 'count'])
+    print(results)
     return results.sort_values(by=['count', 'mean'], ascending=False)
 
 
