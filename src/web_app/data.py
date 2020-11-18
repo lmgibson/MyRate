@@ -59,5 +59,4 @@ class DataAnalysis:
         plotData = plotData.reset_index().pivot(index='date_accessed',
                                                 columns='skills_list',
                                                 values='mean')
-
         return plotData

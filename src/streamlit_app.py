@@ -18,7 +18,7 @@ st.markdown(
 )
 
 st.line_chart(data=overallHourlyRates)
-st.write(plt)
+st.write(plotData)
 
 col1, col2 = st.beta_columns(2)
 col1.markdown("## Most popular skills")
