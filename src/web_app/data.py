@@ -46,6 +46,4 @@ class DataAnalysis:
         return self.data.loc[self.data['date_accessed'] == mostRecentDate, :]
 
     def plotTrendsInAverageHourlyRate(self):
-        plotData = self.data.groupby(
-            ['date_accessed'])['hourly_rate'].mean()
-        sns.lineplot(data=plotData, x=plotData.index, y="hourly_rate")
+        plotData = self.data.groupby(['date_accessed'])['hourly_rate'].mean()

@@ -1,6 +1,9 @@
 import streamlit as st
 from web_app import data
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
+
 data = data.DataAnalysis()
 data.loadDataFromAirtable()
 overallHourlyRates = data.calculateOverallHourlyRate()
@@ -14,8 +17,8 @@ st.markdown(
     "## Trends in overall average hourly rate"
 )
 
-st.write(overallHourlyRates)
-st.write(plt)
+st.line_chart(data=overallHourlyRates)
+
 
 col1, col2 = st.beta_columns(2)
 col1.markdown("## Most popular skills")
