@@ -8,7 +8,7 @@ data = data.DataAnalysis()
 data.loadDataFromAirtable()
 overallHourlyRates = data.calculateOverallHourlyRate()
 hourlyRatesBySkill = data.calculateHourlyRateBySkill()
-plt = data.plotTrendsInAverageHourlyRate()
+plotData = data.plotTrendsInAverageHourlyRate()
 
 st.title("Freelance Hourly Rate Trends")
 st.markdown(
@@ -18,7 +18,7 @@ st.markdown(
 )
 
 st.line_chart(data=overallHourlyRates)
-
+st.write(plt)
 
 col1, col2 = st.beta_columns(2)
 col1.markdown("## Most popular skills")

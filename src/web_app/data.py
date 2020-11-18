@@ -3,7 +3,6 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 from datetime import date
 from airtable import Airtable
 
@@ -26,24 +25,39 @@ class DataAnalysis:
         return self.data.groupby(['date_accessed'])['hourly_rate'].mean()
 
     def calculateHourlyRateBySkill(self):
-        self.filteredData = self.filterToMostRecentDate()
-        self.filteredData.loc[:,
-                              'skills_list'] = self.convertSkillsStringToList()
-        self.filteredData = self.filteredData.explode('skills_list')
-        results = self.filteredData.groupby(['skills_list'])[
+        data = self.data.copy()
+        data = self.filterToMostRecentDate(data)
+        data.loc[:,
+                 'skills_list'] = self.convertSkillsStringToList(data)
+        data = data.explode('skills_list')
+        data['skills_list'] = data['skills_list'].str.strip("'")
+        results = data.groupby(['skills_list'])[
             'hourly_rate'].agg(['mean', 'count'])
         results = results.sort_values(by=['count', 'mean'], ascending=False)
-        del self.filteredData
+        del data
         return results
 
-    def convertSkillsStringToList(self):
-        strippedSkillsList = self.filteredData['skills_list'].str.strip('][')
+    def convertSkillsStringToList(self, data):
+        strippedSkillsList = data['skills_list'].str.strip('][')
         splitSkillsList = strippedSkillsList.str.split(', ')
         return splitSkillsList
 
-    def filterToMostRecentDate(self):
-        mostRecentDate = self.data.date_accessed.max()
-        return self.data.loc[self.data['date_accessed'] == mostRecentDate, :]
+    def filterToMostRecentDate(self, data):
+        mostRecentDate = data.date_accessed.max()
+        return data.loc[data['date_accessed'] == mostRecentDate, :]
 
     def plotTrendsInAverageHourlyRate(self):
-        plotData = self.data.groupby(['date_accessed'])['hourly_rate'].mean()
+        plotData = self.data.copy()
+        plotData.loc[:, ['skills_list']
+                     ] = self.convertSkillsStringToList(self.data)
+        plotData = plotData.explode('skills_list')
+        plotData = plotData.groupby(['date_accessed', 'skills_list'])[
+            'hourly_rate'].agg(['mean']).reset_index(level=1)
+        plotData['skills_list'] = plotData['skills_list'].str.strip("'")
+        plotData = plotData.loc[plotData['skills_list'].isin(
+            ["Angular", "CSS", "App Development"]), :]
+        plotData = plotData.reset_index().pivot(index='date_accessed',
+                                                columns='skills_list',
+                                                values='mean')
+
+        return plotData
