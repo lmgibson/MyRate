@@ -1,43 +1,11 @@
-from airtable import Airtable
 import streamlit as st
-import pandas as pd
-import numpy as np
-import os
-from datetime import date
+from web_app import data
 
-
-def loadDataFromAirtable():
-    api_key = os.environ['AIRTABLE_API_KEY']
-    base_key = os.environ['AIRTABLE_FREELANCE_BASE_KEY']
-    table_name = 'freelancers'
-    airtable = Airtable(base_key, table_name, api_key)
-    return pd.DataFrame.from_records(
-        (r['fields'] for r in airtable.get_all()))
-
-
-def calculateOverallHourlyRate():
-    return pandasData.groupby(['date_accessed'])['hourly_rate'].mean()
-
-
-def convertSkillsStringToList():
-    strippedSkillsList = pandasData['skills_list'].str.strip('][')
-    splitSkillsList = strippedSkillsList.str.split(', ')
-    return splitSkillsList
-
-
-def filterPandasDataToMostRecentDate():
-    mostRecentDate = pandasData.date_accessed.max()
-    return pandasData.loc[pandasData['date_accessed'] == mostRecentDate]
-
-
-def calculateHourlyRateBySkill():
-    pandasData = filterPandasDataToMostRecentDate()
-    pandasData['skills_list'] = convertSkillsStringToList()
-    explodedPandasData = pandasData.explode('skills_list')
-    results = explodedPandasData.groupby(['skills_list'])[
-        'hourly_rate'].agg(['mean', 'count'])
-    return results.sort_values(by=['count', 'mean'], ascending=False)
-
+data = data.DataAnalysis()
+data.loadDataFromAirtable()
+overallHourlyRates = data.calculateOverallHourlyRate()
+hourlyRatesBySkill = data.calculateHourlyRateBySkill()
+plt = data.plotTrendsInAverageHourlyRate()
 
 st.title("Freelance Hourly Rate Trends")
 st.markdown(
@@ -45,10 +13,10 @@ st.markdown(
 st.markdown(
     "## Trends in overall average hourly rate"
 )
-pandasData = loadDataFromAirtable()
-st.write(calculateOverallHourlyRate())
 
-hourlyRatesBySkill = calculateHourlyRateBySkill()
+st.write(overallHourlyRates)
+st.write(plt)
+
 col1, col2 = st.beta_columns(2)
 col1.markdown("## Most popular skills")
 col1.write(hourlyRatesBySkill.head(5))
