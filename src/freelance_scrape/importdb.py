@@ -1,19 +1,7 @@
 import csv
 import psycopg2
+import os
 from datetime import date
-
-conn = psycopg2.connect("host=localhost dbname=testdb user=Metaverse")
-cur = conn.cursor()
-today = date.today().strftime("%d%m%Y")
-filename = "./data/processed/user_data_" + today + ".csv"
-with open(filename) as f:
-    reader = csv.reader(f)
-    next(reader)
-    for row in reader:
-        pass
-        # call = "INSERT INTO skills VALUES (%s, %s)" % (
-        #     row[1], str(row[4]).replace('[', '{').replace(']', '}'))
-        # print(call)
 
 
 def insertUsers():
@@ -66,8 +54,6 @@ def insertSkills():
     """
     conn = psycopg2.connect("host=localhost dbname=testdb user=Metaverse")
     cur = conn.cursor()
-    today = date.today().strftime("%d%m%Y")
-    filename = "./data/processed/user_data_" + today + ".csv"
     with open(filename) as f:
         reader = csv.reader(f)
         next(reader)
@@ -76,3 +62,8 @@ def insertSkills():
                 "INSERT INTO skills VALUES (%s, %s) ON CONFLICT (name) DO UPDATE SET skillsArray=EXCLUDED.skillsArray",
                 (row[1], str(row[4]).replace('[', '{').replace(']', '}')))
     conn.commit()
+
+
+# today = date.today().strftime("%d%m%Y")
+# filename = "./data/processed/user_data_" + today + ".csv"
+# os.remove(filename)
