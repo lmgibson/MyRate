@@ -19,5 +19,6 @@ from freelance_scrape import importPgSQL as imp
 # Insert into postgres db
 imp.insertUsers()
 imp.insertRates()
+imp.insertSkills()
 
 print("Upload complete!")
