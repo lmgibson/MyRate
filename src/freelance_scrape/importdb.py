@@ -17,6 +17,11 @@ with open(filename) as f:
 
 
 def insertUsers():
+    """
+    Inserts user names into a table named "users":
+      1. id SERIAL PRIMARY KEY
+      2. name VARCHAR (120) NOT NULL
+    """
     conn = psycopg2.connect("host=localhost dbname=testdb user=Metaverse")
     cur = conn.cursor()
     today = date.today().strftime("%d%m%Y")
@@ -32,6 +37,13 @@ def insertUsers():
 
 
 def insertRates():
+    """
+    Inserts rates data into a table named "rates" that is formatted:
+      1. name VARCHAR (120) NOT NULL
+      2. scrapeDate date NOT NULL
+      3. rate float
+      PRIMARY KEY (name, scrapeDate)
+    """
     conn = psycopg2.connect("host=localhost dbname=testdb user=Metaverse")
     cur = conn.cursor()
     today = date.today().strftime("%d%m%Y")
@@ -47,6 +59,11 @@ def insertRates():
 
 
 def insertSkills():
+    """
+    Inserts data into a table named "skills" that is of the following format:
+      1. name VARCHAR (120) PRIMARY KEY
+      2. skillsArray text[][]
+    """
     conn = psycopg2.connect("host=localhost dbname=testdb user=Metaverse")
     cur = conn.cursor()
     today = date.today().strftime("%d%m%Y")
