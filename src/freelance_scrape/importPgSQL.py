@@ -1,13 +1,17 @@
 import csv
 import psycopg2
+from datetime import date
 
 
-def insertUsers(data):
+def insertUsers():
     conn = psycopg2.connect("host=localhost dbname=testdb user=Metaverse")
     cur = conn.cursor()
-    with open("./data/processed/user_data_01112020.csv") as f:
+    today = date.today().strftime("%d%m%Y")
+    filename = "./data/processed/user_data_" + today + ".json"
+    with open(filename) as f:
         reader = csv.reader(f)
         next(reader)
         for row in reader:
-            cur.execute("INSERT INTO users VALUES (Default, %s)", (row[1],))
+            cur.execute(
+                "INSERT INTO users VALUES (Default, %s) ON CONFLICT DO NOTHING/UPDATE", (row[1],))
     conn.commit()

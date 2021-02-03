@@ -1,7 +1,7 @@
 # Scrape and Clean commands
 from freelance_scrape import scrape as ss
 from freelance_scrape import clean as cl
-from freelance_scrape import upload as up
+from freelance_scrape import importPgSQL as imp
 
 # Scraping Static Elements
 scraper = ss.GuruScraper()
@@ -16,7 +16,7 @@ clean_class.merge_data()
 
 print("Scrape and Clean complete")
 
-# Upload data to airtable databse
-up.ImportData()
+# Insert into postgres db
+imp.insertUsers()
 
 print("Upload complete!")
