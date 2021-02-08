@@ -56,3 +56,7 @@ notebooks
 # Docker
 Dockerfile
 .docker*
+
+#
+*.pub
+freelanceApp
