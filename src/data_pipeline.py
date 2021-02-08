@@ -14,7 +14,6 @@ scraper.data_extraction()
 # Cleaning data
 clean_class = cl.CleanData()
 clean_class.merge_data()
-
 print("Scrape and Clean complete")
 
 # Insert into postgres db
@@ -23,5 +22,4 @@ filename = "./data/processed/user_data_" + today + ".csv"
 dbimport.insertUsers(filename)
 dbimport.insertRates(filename)
 dbimport.insertSkills(filename)
-
 print("Upload complete!")
