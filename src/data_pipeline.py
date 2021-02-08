@@ -1,3 +1,4 @@
+from datetime import date
 # Scrape and Clean commands
 from freelance_scrape import scrape as ss
 from freelance_scrape import clean as cl
@@ -17,8 +18,10 @@ clean_class.merge_data()
 print("Scrape and Clean complete")
 
 # Insert into postgres db
-dbimport.insertUsers()
-dbimport.insertRates()
-dbimport.insertSkills()
+today = date.today().strftime("%d%m%Y")
+filename = "./data/processed/user_data_" + today + ".csv"
+dbimport.insertUsers(filename)
+dbimport.insertRates(filename)
+dbimport.insertSkills(filename)
 
 print("Upload complete!")

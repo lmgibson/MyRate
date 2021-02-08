@@ -4,7 +4,7 @@ import os
 from datetime import date
 
 
-def insertUsers():
+def insertUsers(filename):
     """
     Inserts user names into a table named "users":
       1. id SERIAL PRIMARY KEY
@@ -24,7 +24,7 @@ def insertUsers():
     conn.commit()
 
 
-def insertRates():
+def insertRates(filename):
     """
     Inserts rates data into a table named "rates" that is formatted:
       1. name VARCHAR (120) NOT NULL
@@ -46,7 +46,7 @@ def insertRates():
     conn.commit()
 
 
-def insertSkills():
+def insertSkills(filename):
     """
     Inserts data into a table named "skills" that is of the following format:
       1. name VARCHAR (120) PRIMARY KEY
