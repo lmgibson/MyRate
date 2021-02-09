@@ -47,15 +47,8 @@ user_data*
 # Bash script to run data pipeline
 pull_and_merge_data
 
-# Ignoring data
-**/data
-
 # Notebooks
 notebooks
-
-# Docker
-Dockerfile
-.docker*
 
 #
 *.pub

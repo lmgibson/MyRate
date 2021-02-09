@@ -1,6 +1,2 @@
 beautifulsoup4==4.9.3
 pandas
-airtable-python-wrapper
-streamlit
-matplotlib
-seaborn
