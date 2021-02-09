@@ -13,7 +13,6 @@ scraper.data_extraction()
 
 # Cleaning data
 clean_class = cl.CleanData()
-clean_class.merge_data()
 print("Scrape and Clean complete")
 
 # Insert into postgres db
