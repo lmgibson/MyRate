@@ -36,15 +36,5 @@ class CleanData:
         user_data.to_csv(filename)
 
         # Processed data to JSON
-        filename = "./data/processed/user_data_" + today + ".json"
-        user_data.to_json(path_or_buf=filename, orient='records')
-
-    # def merge_data(self):
-    #     today = date.today().strftime("%d%m%Y")
-    #     clean_data = pd.read_csv("./data/cleaned/user_data.csv")
-    #     new_data = pd.read_csv("./data/processed/user_data_" + today + ".csv")
-
-    #     merged_data = clean_data.append(new_data, ignore_index=True)
-
-    #     filename = "./data/cleaned/user_data.csv"
-    #     merged_data.to_csv(filename)
+        # filename = "./data/processed/user_data_" + today + ".json"
+        # user_data.to_json(path_or_buf=filename, orient='records')
