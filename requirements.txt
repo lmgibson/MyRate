@@ -1,2 +1,4 @@
 beautifulsoup4==4.9.3
 pandas
+requests
+psycopg2
