@@ -1,6 +1,6 @@
 # MyRate - Trends and data on freelancer hourly rates
 
-You can see the data here: [Freelance Rates](http://157.230.183.143:8501/)
+This project has taken many forms depending on what I'm experimenting with. Most recently, it has taken the form of a web-scraper that places the data within a postgres database.
 
 ## Welcome
 
